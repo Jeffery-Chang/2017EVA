@@ -2879,6 +2879,9 @@ body, .wrap, .index, .top-slider, .cell, .cell > .inner, .slider-img, .lightbox 
   left: 0;
   z-index: 2;
   pointer-events: none;
+  background: url(../img/c9.png) no-repeat;
+  background-size: 100% auto;
+  height: 2000px;
 }
 @media screen and (max-width: 736px) {
   .scrolling_cloud {
