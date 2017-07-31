@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="24px" viewBox="0 0 13 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="index_pic" transform="translate(-1231.000000, -5880.000000)" fill="#FFFFFF">
+            <g id="timeline" transform="translate(-357.000000, 1606.000000)">
+                <g id="histroy" transform="translate(544.000000, 4010.000000)">
+                    <g id="arrow" transform="translate(0.000000, 258.000000)">
+                        <path d="M1046.45849,7.0757561 C1046.02956,6.64682927 1045.33502,6.64682927 1044.90654,7.0757561 C1044.47761,7.5042439 1044.47761,8.19921951 1044.90654,8.62770732 L1054.27883,18.000439 L1044.90566,27.3722927 C1044.47673,27.8007805 1044.47673,28.4957561 1044.90566,28.9242439 C1045.1199,29.1384878 1045.40088,29.2456098 1045.68185,29.2456098 C1045.96283,29.2456098 1046.24337,29.1384878 1046.45805,28.9242439 L1056.60698,18.7766341 C1056.81288,18.5707317 1056.92834,18.2919512 1056.92834,18.000439 C1056.92834,17.7089268 1056.81244,17.4301463 1056.60698,17.2242439 L1046.45849,7.0757561 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

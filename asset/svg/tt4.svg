@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 263.4 30.9" style="enable-background:new 0 0 263.4 30.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Fill-1_2_);}
+	.st1{fill:url(#Fill-3_1_);}
+</style>
+<g id="Group-7" transform="translate(133.624005, 59.425083) rotate(-6.000000) translate(-133.624005, -59.425083) translate(1.624005, 42.425083)">
+	
+		<linearGradient id="Fill-1_2_" gradientUnits="userSpaceOnUse" x1="-312.5695" y1="217.7301" x2="-311.8952" y2="218.1067" gradientTransform="matrix(259.6344 34.5956 30.4495 -22.1081 74573.2188 15588.3359)">
+		<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.7336"/>
+	</linearGradient>
+	<path id="Fill-1_1_" class="st0" d="M5.3-56.1c0,0,142.5,40.7,261.9,28.2c0,0-71.1,27-221.4-3.8L5.3-56.1z"/>
+	
+		<linearGradient id="Fill-3_1_" gradientUnits="userSpaceOnUse" x1="-312.6693" y1="219.7251" x2="-311.8098" y2="220.5014" gradientTransform="matrix(235.2177 32.3638 28.7748 -29.6038 67285.1172 16597.0293)">
+		<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.6003"/>
+	</linearGradient>
+	<path id="Fill-3" class="st1" d="M28.6-43.2c0,0,144.2,35.7,238.6,15.3c0,0-40.2,31.2-192.6,9.5L28.6-43.2z"/>
+</g>
+</svg>

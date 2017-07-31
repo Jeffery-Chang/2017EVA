@@ -1,0 +1,59 @@
+$width:36px;
+$height:2px;
+.burger {
+    width: $width;
+    height: 32px;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+}
+.burger:before, .burger span, .burger:after {
+    width: 100%;
+    height: $height;
+    display: block;
+    background: #fff;
+    @include border-radius(1px);
+    @include opacity(1);
+    position: absolute;
+}
+.burger:before, .burger:after {
+    transition: top .35s cubic-bezier(.23,1,.32,1),transform .35s cubic-bezier(.23,1,.32,1),opacity .35s cubic-bezier(.23,1,.32,1),background-color 1.15s cubic-bezier(.86,0,.07,1);
+    -webkit-transition: top .35s cubic-bezier(.23,1,.32,1),-webkit-transform .35s cubic-bezier(.23,1,.32,1),opacity .35s cubic-bezier(.23,1,.32,1),background-color 1.15s cubic-bezier(.86,0,.07,1);
+    content: "";
+}
+.burger:before {
+    top: 4px;
+}
+.burger span {
+    top: 15px;
+}
+.burger:after {
+    top: 26px;
+}
+/* Hover */
+.burger:hover:before {
+    top: 7px;
+}
+.burger:hover:after {
+    top: 23px;
+}
+/* Click */
+.burger.cross span {
+    opacity: 0;
+}
+.burger.cross:before, .burger.cross:after {
+    top: 40%;
+}
+.burger.cross:before {
+    -webkit-transform: rotate(45deg); 
+    -moz-transform: rotate(45deg);  
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5); /*for IE*/
+}
+.burger.cross:after {
+    -webkit-transform: rotate(-45deg); 
+    -moz-transform: rotate(-45deg);  
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5); /*for IE*/
+}
+.burger:focus {
+    outline: none;
+}

@@ -1,0 +1,155 @@
+// all mixins.
+%all-100 {
+    width: 100%;
+    height: 100%;
+}
+
+%txt_justify {
+    text-align: justify;
+    text-justify: inter-ideographic;
+}
+
+
+// pic scale
+@mixin pic_scale {
+    &:after {
+        position: absolute;
+        display: block;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: rgba(0, 0, 0, 0);
+    }
+    &:hover {
+        &:after {
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3;
+            transition: background 0.2s ease;
+        }
+        img {
+            transform: scale(1.1);
+            transition: all 0.2s ease;
+        }
+        span {
+            opacity: 1;
+            transition: all 0.2s ease;
+        }
+    }
+}
+
+// nav underline
+@mixin underline($left, $width) {
+    bottom: 50px;
+    content: "";
+    display: block;
+    height: 1px;
+    left: $left;
+    position: absolute;
+    background: white;
+    width: $width;
+    right: 0;
+}
+
+// flex box mid
+@mixin flex-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// flex equal-height box
+@mixin flex-h {
+    display: flex;
+    align-items: stretch;
+}
+
+// flex row
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+// img size
+@mixin img_size($image) {
+    width: image-width("../img/#{$image}");
+    height: image-height("../img/#{$image}");
+    background: url("../img/#{$image}") no-repeat;
+}
+
+$box_w: 100%;
+$box_h: auto;
+@mixin box-size($box_w,
+$box_h) {
+    width: $box_w;
+    height: $box_h;
+}
+
+// imgscalable
+@mixin img-scalable {
+    >img {
+        @include box(100%,
+        auto);
+        display: block;
+    }
+}
+
+// circle
+@mixin cir($unit) {
+    width: $unit;
+    height: $unit;
+    border-radius: 100%;
+}
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin pos-mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+// full-screen
+@mixin full-screen {
+    width: 100%;
+    min-height: 100%;
+}
+
+// clearboth
+@mixin clear {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+// vertical align
+@mixin v-align($h) {
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: $h;
+    }
+}
+
+// position absl
+@mixin absl($top,
+$left,
+$bottom,
+$right) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+}

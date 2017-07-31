@@ -1,0 +1,38 @@
+@charset "UTF-8";
+// reset
+@import "compass/reset";
+@import "compass/css3";
+// font style
+@import "color";
+@import "typography";
+@import "iconfont";
+// mixin
+@import "mixin";
+// layout
+@import "trans";
+@import "layout";
+
+// web own style
+@import "header";
+@import "bur";
+@import "menubox";
+@import "index";
+@import "animation";
+@import "album";
+@import "history";
+@import "cloud";
+@import "qa";
+@import "lightbox";
+
+.scrolling_cloud{
+	width: 100%;
+	position: absolute;
+	top: 3000px;
+	left: 0;
+	z-index: 2;
+	pointer-events: none;
+	
+	@media screen and (max-width: 736px) {
+            display: none;
+        }
+}

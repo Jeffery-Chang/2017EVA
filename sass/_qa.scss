@@ -1,0 +1,169 @@
+.QA {
+    background: url(../img/bg5.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    background-attachment: fixed;
+    @media screen and (max-device-width: 768px) {
+        background: url(../img/m_bg5.jpg) no-repeat;
+        background-size: cover;
+    }
+    .main {
+        width: 70%;
+        margin: auto;
+        padding-top: 100px;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+            padding-top: 60px;
+        }
+    }
+    .content {
+        margin-top: 80px;
+        @media screen and (max-width: 768px) {
+            margin-top: 50px;
+        }
+    }
+    li {
+        font-size: 1.6rem;
+        text-align: left;
+        letter-spacing: 1px;
+        border-top: 1px solid rgba(255, 255, 255, 0.22);
+        padding: 20px 50px;
+        position: relative;
+        opacity: .8;
+        cursor: pointer;
+        @media screen and (max-width: 768px) {
+            padding: 20px 8% 20px 17%;
+        }
+
+        &:after {
+            content: "";
+            width: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: width .2s ease 0s, left .2s ease 0s;
+        }
+        &:hover {
+            opacity: 1;
+            &:after {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}
+
+.question {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    position: relative;
+    font-weight: 400;
+    @media screen and (max-width: 736px) {
+        font-size: 1.5rem;
+    }
+    @media screen and (max-width: 374px) {
+        // font-size: 1.4rem;
+    }
+}
+
+.qabox {
+    color: white;
+    &:after {
+        content: url(../asset/svg/Q.svg);
+        position: absolute;
+        top: 27px;
+        left: 8px;
+        width: 30px;
+        height: 30px;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.col-2 {
+    display: inline-block;
+    margin-right: 50px;
+    vertical-align: top;
+}
+
+.answer {
+    line-height: 2;
+    @extend %txt_justify;
+    margin-bottom: 15px;
+    display: none;
+    .list {
+        span {
+            display: block;
+            position: relative;
+            padding-left: 20px;
+            &:before {
+                content: "";
+                @include cir(5px);
+                position: absolute;
+                top: 14px;
+                left: 4px;
+                background: white;
+            }
+        }
+    }
+}
+
+
+
+.plus_btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -40px;
+    z-index: 1;
+    @media screen and (max-width: 768px) {
+        right:auto;
+        left: -40px;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+}
+
+.btn_box {
+    border: 1px solid white;
+    @include cir(26px);
+    position: relative;
+    cursor: pointer;
+}
+
+.plus-minus-toggle {
+    @include pos-mid;
+    margin-left: 6px;
+    margin-top: 12px;
+    width: 26px;
+    height: 26px;
+    &:before,
+    &:after {
+        background: white;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 14px;
+        transition: transform .2s ease;
+        border-radius: 2px;
+    }
+    &:after {
+        transform-origin: center;
+    }
+    &.collapsed {
+        &:after {
+            transform: rotate(90deg);
+        }
+        &:before {
+            transform: rotate(180deg);
+        }
+    }
+}

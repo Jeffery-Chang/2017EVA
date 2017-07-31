@@ -1,0 +1,144 @@
+// for website grid system or section width and height.
+@charset "UTF-8";
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+html,
+body {
+    @extend %fw_r;
+    line-height: 1.5;
+    font-family: 'Lato', 'Noto Sans TC', 'PingFang TC', 'Heiti TC', 'Apple LiGothic Medium', 'Microsoft JhengHei', sans-serif;
+    font-weight: 300;
+    color: white;
+    min-width: 314px;
+    -webkit-text-size-adjust: 100%;
+    min-height: 700px;
+    @extend %all-100;
+}
+
+* {
+    @include box-sizing(border-box);
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    behavior: expression(this.onFocus=this.blur());
+    /* for IE */
+}
+
+#{headings()} {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.wrap {
+    @extend %all-100;
+    position: relative;
+    min-width: 314px;
+}
+
+p,
+.sub {
+    letter-spacing: 1px;
+}
+
+input,
+button,
+select,
+textarea {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+ul {
+    font-size: 0;
+}
+
+.dot {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+
+    a {
+        @include cir(10px);
+        border: 1px solid $deepG;
+        display: block;
+        margin: 20px 0;
+        position: relative;
+        &:hover {
+            background: $deepG;
+            transition: all .3s ease;
+            &:after {
+                animation: dot ease 1.5s infinite;
+                @include cir(20px);
+                border: 1px solid $deepG;
+                content: "";
+                @include pos-mid;
+            }
+        }
+        &.active {
+            background: $deepG;
+            margin: 25px 0;
+            &:after {
+                @include cir(20px);
+                border: 1px solid $deepG;
+                content: "";
+                @include pos-mid;
+            }
+            &:hover:after {
+                animation: dot ease 1.5s infinite;
+            }
+        }
+    }
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 6rem;
+    @media screen and (max-width: 1325px) {
+        font-size: 5rem;
+    }
+    @media screen and (max-width: 736px) {
+        font-size: 3.8rem;
+    }
+}
+
+.sub {
+    font-size: 1.5rem;
+}
+
+footer {
+    width: 100%;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    img {
+        width: 300px;
+        margin: auto;
+        @media screen and (max-width: 736px) {
+            width: 70%;
+        }
+    }
+    p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+}
