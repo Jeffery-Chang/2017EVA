@@ -2450,6 +2450,17 @@ h5 {
   }
 }
 
+html,
+body, .wrap, .index, .top-slider, .cell, .cell > .inner, .slider-img, .lightbox {
+  width: 100%;
+  height: 100%;
+}
+
+.answer {
+  text-align: justify;
+  text-justify: inter-ideographic;
+}
+
 .QA {
   background: url(../img/bg5.jpg) no-repeat;
   background-size: cover;
@@ -2518,6 +2529,9 @@ h5 {
 .QA li:hover:after {
   width: 100%;
   left: 0;
+}
+.QA li.active {
+  background: rgba(255, 255, 255, .08);
 }
 
 .question {
