@@ -30,6 +30,11 @@
     </head>
     <body>
         <span id="indexPage" v-cloak>
+            <div id="splash">
+                <div class="anim">
+                    <div id="loader"><img src="asset/svg/plane.svg" alt=""><img class="shade" src="asset/svg/plane_b.svg" alt=""></div>
+                </div>
+            </div>
             <div class="trans_bg">
                 <div class="trans_iphone">
                     <div class="trans_center"><img src="img/iphone_ok.png">                
@@ -38,7 +43,7 @@
                 </div>
             </div>
             <!-- header-->
-            <header :class="{ 'mobile' : burger }"><a class="logo" href="index.html"> <img src="asset/svg/logo_w.svg" alt="logo"></a>
+            <header :class="{ 'mobile' : burger }"><a class="logo" href="#"><img src="asset/svg/logo_w.svg" alt="logo"></a>
                 <!-- bur-->
                 <div class="burBox" id="toggle" @click="burgerCtrl">
                     <div class="burger" :class="{ 'cross' : burger == true }" ><span></span></div>
@@ -51,7 +56,7 @@
                             <li><a class="line" href="#" role="history">747 - 400 大事紀</a></li>
                             <li><a class="line" href="#" role="story">歷史回顧</a></li>
                             <li><a class="line" href="#" role="QA">QA 小教室</a></li>
-                            <li><a class="fb" href="#"><span class="icon-fb"></span></a></li>
+                            <li><a class="fb" href="#" role="fb"><span class="icon-fb"></span></a></li>
                         </span>
                         <li class="lang">
                             <ul>
@@ -82,7 +87,7 @@
                                 <li><a class="line" href="#">日本語</a></li>
                             </ul>
                         </li>
-                        <li><a class="fb_pos" href="#"><span class="icon-fb"></span></a></li>
+                        <li><a class="fb_pos" href="#" role="fb"><span class="icon-fb"></span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -98,7 +103,7 @@
                                 <a class="right"><span class="icon-arrow"></span></a>
                             </div>
                             <div class="slickBox">
-                                <div class="picBox" v-for="item in slickData">
+                                <div :index="$index" class="picBox" v-for="(item, $index) in slickData">
                                     <img :src="'img/album/' + item.src" alt="">
                                 </div>
                             </div>
@@ -106,15 +111,20 @@
                         <div class="slider">
                             <ul>
                                 <li v-for="(item, $index) in slickData">
-                                    <a href="#" :class="{ 'active' : $index == 0 }">
+                                    <a :class="{ 'active' : $index == 0 }">
                                         <img :src="'img/album/' + item.src" alt="">
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <!-- timeline-->
-                    <div class="main" style="display:none;"><img src="img/album/07/07_02.jpg" alt=""></div>
+                </div>
+            </transition>
+            <!-- timeline-->
+            <transition name="fade">
+                <div class="lightbox" v-show="singleBox">
+                    <a class="close" @click="singleBox = false"><span></span><span></span></a>
+                    <div class="main"><img :src="singleBoxSrc" alt=""></div>
                 </div>
             </transition>
             <!-- content-->
@@ -140,7 +150,22 @@
                     <div class="top-slider">
                         <div class="cell">
                             <div class="inner">
-                                <div class="slider-img"></div>
+                                <div class="slide-img" style="background: url(img/bg1.png) center bottom; background-size: cover;"></div>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="inner">
+                                <div class="slide-img" style="background: url(img/bg2.png) center bottom; background-size: cover;"></div>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="inner">
+                                <div class="slide-img" style="background: url(img/bg3.png) center bottom; background-size: cover;"></div>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="inner">
+                                <div class="slide-img" style="background: url(img/bg4.png) center bottom; background-size: cover;"></div>
                             </div>
                         </div>
                     </div>
@@ -157,9 +182,9 @@
                                 <div class="sub">重溫大小事蹟，再現空中女王風采</div>
                                 <div class="tab">
                                     <ul>
-                                        <li :class="{ 'active' : albumFG == true }" @click="albumFG = true"><a><span class="icon-camera"></span><span>照片</span></a></li>
+                                        <li :class="{ 'active' : albumFG == true }" @click="albumFG = true"><a :style="{ 'cursor': 'pointer'}"><span class="icon-camera"></span><span>照片</span></a></li>
                                         <li class="line"></li>
-                                        <li :class="{ 'active' : albumFG == false }" @click="albumFG = false"><a href="#"><span class="icon-video"></span><span>影片</span></a></li>
+                                        <li :class="{ 'active' : albumFG == false }" @click="albumFG = false"><a :style="{ 'cursor': 'pointer'}"><span class="icon-video"></span><span>影片</span></a></li>
                                         <div class="bar"></div>
                                     </ul>
                                 </div>
@@ -197,31 +222,31 @@
                                     <p>1990.07.12</p>
                                     <p>首度展示 B747-400 飛機模型<span>並發表企業識別系統</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img class="p1" src="img/event/event_01.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img class="p1" src="img/event/event_01.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>1992.11.02</p>
                                     <p>第一、二架 B747-400 新機<span>於西雅圖波音公司舉行交機儀式</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_02.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_02.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>1992.11.24</p>
                                     <p>第一、二架 B747-400<span>新機抵台歡迎儀式</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_03.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_03.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>1992.12.12</p>
                                     <p>開闢越太平洋台北 - 洛杉磯航線</p>
                                 </div>
-                                <div class="cir"></div>
+                                <div class="tldots"><div class="cir"></div></div>
                                 <div class="c2-2"><img src="img/c2.png" alt=""></div>
                             </section>
                             <section>
@@ -229,8 +254,8 @@
                                     <p>1993.05.18</p>
                                     <p>第三架 B747-400 新機抵台歡迎儀式</p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_04.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_04.jpg" alt=""></a></div>
                                 <div class="plane1 wow slideInRight"><img src="img/plane2.png" alt=""></div>
                             </section>
                             <section>
@@ -239,24 +264,24 @@
                                     <p>首架 B747-400 客貨兩用機<span>於西雅圖波音公司舉行交機儀式</span></p>
                                     <div class="c5"><img src="img/c5.png" alt=""></div>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_05.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_05.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>1993.09.23</p>
                                     <p>第五架 B747-400 新機抵台歡迎儀式</p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_06.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_06.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>1999.07</p>
                                     <p>從澳洲載運無尾熊「派翠克」和<span>「哈雷」搭乘長榮航空波音</span><span>747-400 Combi 客貨機抵達台灣</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_07.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_07.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
@@ -264,24 +289,24 @@
                                     <p>首架 B747-400 貨機於<span>中正國際機場第二航廈公開亮相</span></p>
                                     <div class="c5-2"><img src="img/c5.png" alt=""></div>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_08.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_08.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2001.11.20</p>
                                     <p>B747-400 新塗裝亮相</p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img class="p9" src="img/event/event_09.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img class="p9" src="img/event/event_09.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2004.10</p>
                                     <p>載運無尾熊「Pearl」和「Joey」來台</p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img class="p10" src="img/event/event_10.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img class="p10" src="img/event/event_10.jpg" alt=""></a></div>
                                 <div class="c3"><img src="img/c3.png" alt=""></div>
                             </section>
                             <section>
@@ -289,16 +314,16 @@
                                     <p>2005.02.18</p>
                                     <p>與波音公司 B747-400<span>超大型貨機(LCF)改裝工程簽約儀式</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_11.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_11.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2007.04.22</p>
                                     <p>首架 B747-400 完成客機改貨機<span>改裝作業，並於 5 月開始營運</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_12.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_12.jpg" alt=""></a></div>
                                 <div class="c2-3"><img src="img/c2.png" alt=""></div>
                                 <div class="plane2 wow slideInLeft"><img src="img/plane1.png" alt=""></div>
                             </section>
@@ -307,24 +332,24 @@
                                     <p>2007.06.15</p>
                                     <p>第一架 B747 全客機<span>更新客艙內裝完工</span><span>配備桂冠艙、菁英艙及經濟艙</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_13.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_13.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2007.10.04</p>
                                     <p>B747-400 頭等艙吧台換新裝</p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_14.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_14.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2008.03.14</p>
                                     <p>B747-400 客機艙換新裝</p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_15.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_15.jpg" alt=""></a></div>
                                 <div class="c1-2"><img src="img/c1.png" alt=""></div>
                             </section>
                             <section>
@@ -332,31 +357,31 @@
                                     <p>2008.12.22</p>
                                     <p>以 B747-400 客貨兩用機擔綱<span>貓熊包機任務自四川載運</span><span>大熊貓「團團圓圓」來台</span><span>掀起台北市立動物園的參觀熱潮</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_16.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_16.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2013.09.13 </p>
                                     <p>B747-400 Combi<span>客貨兩用機(編號 B-16403)除役</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img class="p17" src="img/event/event_17.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img class="p17" src="img/event/event_17.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2015.01.05 </p>
                                     <p>最後一架波音 747-400 客貨機<span>(編號 B-16409) 執行完最後一趟</span><span>BR868 香港－桃園飛行後正式功成身退</span><span>也宣告 747-400 客貨機正式走入歷史</span></p>
                                 </div>
-                                <div class="cir"></div>
-                                <div class="pic"><a href="#"><img src="img/event/event_18.jpg" alt=""></a></div>
+                                <div class="tldots"><div class="cir"></div></div>
+                                <div class="pic"><a href="#" @click="openSingle($event)"><img src="img/event/event_18.jpg" alt=""></a></div>
                             </section>
                             <section>
                                 <div class="event">
                                     <p>2017.08.24</p>
                                     <p>BR892 從香港國際機場<span>返回桃園國際機場</span><span>完成最後載客飛行任務</span></p>
                                 </div>
-                                <div class="cir"></div>
+                                <div class="tldots"><div class="cir"></div></div>
                             </section>
                         </div>
                         <div class="story">
@@ -433,17 +458,7 @@
                                     </div>
                                 </div>
                                 <div class="slider">
-                                    <ul>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <div class="indicator"></div>
-                                    </ul>
+                                    <div class="indicator"></div>
                                 </div>
                             </div>
                         </div>
@@ -552,14 +567,6 @@
                     </footer>
                 </div>
                 <div class="scrolling_cloud"></div>
-                <div class="dot" hidden>
-                    <ul>
-                        <li><a class="active" href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                    </ul>
-                </div>
             </div>
         </span>
         <script src="js/pic.js"></script>
