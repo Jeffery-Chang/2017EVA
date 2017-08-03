@@ -1201,7 +1201,7 @@ body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img 
     transform: scale(0.9);
   }
 }
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 712px) {
   .index h1 {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -1261,7 +1261,7 @@ body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img 
   letter-spacing: 1px;
   margin: 20px 0;
 }
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 712px) {
   .index .sub {
     display: none;
   }
@@ -1286,7 +1286,7 @@ body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img 
   font-size: 16px;
   font-size: 1.6rem;
 }
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 712px) {
   .index .m_sub {
     display: block;
   }
@@ -2760,7 +2760,11 @@ h5 {
 @media screen and (max-device-width: 768px) {
   .QA {
     background: url(../img/m_bg5.jpg) top left no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-attachment: fixed;
+    height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 }
 .QA .main {

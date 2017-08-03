@@ -58,6 +58,21 @@ body #indexPage header.mobile{
     opacity: 0;
     top: 50px;
 }
+.index .scroll {
+    opacity: 0;
+}
+@media screen and (max-width: 712px) {
+    .index h1 img.base {
+        position: relative;
+        opacity: 0;
+        top: 50px;
+    }
+    .index .m_sub {
+        position: relative;
+        opacity: 0;
+        top: 50px;
+    }
+}
 
 .album .video {
     display: block;
@@ -90,7 +105,7 @@ body #indexPage header.mobile{
 }
 @media screen and (max-width: 736px){
     .index {
-        height: 90vh;
+        height: 85vh;
     }
 }
 .cell {
@@ -176,6 +191,27 @@ body #indexPage header.mobile{
     -webkit-transform: translateY(0);
     transform: translateY(0)
 }
+
+.album .subject .left .line{
+    width: 0;
+}
+.album .subject .right{
+    position: relative;
+    opacity: 0;
+    top: 50px;
+    z-index: 5;
+}
+.album .albumbox ul li {
+    transform: scale(0);
+}
+.album .subject .bar {
+    transition: margin .5s ease;
+}
+.album .subject .bar.move {
+    transition: margin .5s ease;
+    margin-left: 50%;
+}
+
 
 @media screen and (min-width: 737px) {
     .timeline section:before {

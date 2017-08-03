@@ -1,4 +1,3 @@
-(function(a){a.preload=function(){var c=[],b=arguments.length;for(;b--;){c.push(a("<img />").attr("src",arguments[b]));}};})(jQuery);
 $(function(){
     var indexCtrl = new Vue({
         el: '#indexPage',
@@ -6,22 +5,29 @@ $(function(){
             slickData: pic,
             burger: false,
             albumFG: true,
+            albumIN: true,
             wowFG: false,
             singleBox: false,
             singleBoxSrc: 'img/event/event_01.jpg',
             lightbox: true,
-            lightWord: '1992-11-02 西雅圖波音公司 747-400 交機儀式暨晚宴'
-        },
-        beforeMount: function(){
-            //$.each(pic, function(key, obj){ $.preload('img/album/' + obj.src); });
+            lightWord: '1992-11-02 西雅圖波音公司 747-400 交機儀式暨晚宴',
+            ieFG: false
         },
         mounted: function(){
             var $this = this;
+
+            if(this.chkIE9() == 9){
+                this.ieFG = true;
+                location.href = 'index_ie.html';
+                return;
+            }
+
             this.menu();
             this.initObj();
             this.scroll();
             this.resize();
             this.slideBG();
+            
 
             $(window).on('scroll', function(){
                 $this.scroll();
@@ -47,6 +53,13 @@ $(function(){
                     var padding = 0;
                     if(dir){
                         if(dir == 'fb'){
+                            var app_id = '355985614832912';
+                            var fbBack_url = '?fb_back=1';
+                            var url = location.href;
+                            var redirect_uri = location.href;
+                            var share_u;
+                            share_u = encodeURIComponent(url + fbBack_url);
+                            location.href = 'https://www.facebook.com/dialog/share?app_id=' + app_id + '&display=popup&href=' + share_u + '&redirect_uri=' + redirect_uri;
                             return;
                         }
                         if(dir == 'history') padding = 100;
@@ -71,12 +84,19 @@ $(function(){
                 var scrollTop = $(window).scrollTop();
                 var base = $('header').height() / 2;
                 var width = $(window).width();
+                var albumOffset = $('.album').offset().top;
+                
                 if(scrollTop > base){
                     $('header').addClass('scrolled');
                     $('header .logo img').attr('src', 'asset/svg/logo_g.svg');
                 }else{
                     $('header').removeClass('scrolled');
                     $('header .logo img').attr('src', 'asset/svg/logo_w.svg');
+                }
+                
+                if((scrollTop > (albumOffset * 0.6)) && this.albumIN) {
+                    this.albumIN = false;
+                    this.initAlbum();
                 }
             },
             resize: function(){
@@ -93,7 +113,7 @@ $(function(){
                 if(winWidth <= 700){
                     imgName = 'm_';
                     fileName = 'jpg';
-                    position = 'left -120px';
+                    position = 'left -100px';
                 }
 
                 $('.inner').css({ width: $(window).innerWidth() });
@@ -209,12 +229,34 @@ $(function(){
                     $('.indicator').css('margin-left', nextSlide * 25 + 'px');
                 });
             },
+            initAlbum: function(){
+                var leftLine = $('.album .subject .left .line');
+                var rightWord = $('.album .subject .right');
+                var albumLi = $('.album .albumbox ul li');
+                var TL = new TimelineMax({delay: 0});
+                var lineTween = new TweenMax(leftLine, .5, {
+                    width: '100%',
+                    ease: Power0.easeIn
+                });
+                var wordTween = new TweenMax(rightWord, .4, {
+                    opacity: 1,
+                    y: -50,
+                    ease: Power0.easeIn
+                });
+                var liTween = TweenMax.staggerTo(albumLi, .4, {scale: 1, delay: 0, ease: Power0.easeOut}, .15);
+                TL.add(lineTween);
+                TL.add(wordTween);
+                TL.add(liTween);
+            },
             initTitle: function(){
                 var left = $('.tt1, .tt3');
                 var right = $('.tt2');
                 var line = $('.tt4');
                 var plane = $('.tt5');
                 var words = $('.index .sub:not(.m_sub)');
+                var scroll = $('.index .scroll');
+                var m_title = $('.index .base');
+                var m_words = $('.index .sub.m_sub');
                 var delaytime = 0;
                 var sec = 1;
 
@@ -234,6 +276,10 @@ $(function(){
                     ease: Power2.easeIn});
                 tl.add(bezTween);
                 TweenMax.to(line, sec, {width: '231px', ease: Power2.easeIn, delay: .5 + delaytime});
+
+                TweenMax.staggerTo([m_title, m_words], .75, {y: -50, opacity: 1, delay: delaytime, ease: Power1.easeOut}, .33);
+
+                TweenMax.to(scroll, .8, {opacity: 1, delay: 1 + delaytime});
             },
             openBox: function(e, key){
                 this.preventall(e);
@@ -253,6 +299,26 @@ $(function(){
                 this.preventall(e);
                 this.singleBoxSrc = e.target.getAttribute('src');
                 this.singleBox = true;
+            },
+            chkIE9: function(){
+                var userAgent = navigator.userAgent;
+                var fIEVersion = parseFloat(RegExp["$1"]); 
+
+                if(userAgent.indexOf('MSIE 6.0')!=-1){
+                    return "IE6";
+                }else if(fIEVersion == 7){
+                    return "IE7";
+                }else if(fIEVersion == 8){
+                    return "IE8";
+                }else if(fIEVersion == 9){
+                    return "IE9";
+                }else if(fIEVersion == 10){
+                    return "IE10";
+                }else if(userAgent.toLowerCase().match(/rv:([\d.]+)\) like gecko/)){ 
+                    return "IE11";
+                }else{
+                    return "0"
+                }
             }
         }
     });
