@@ -38,6 +38,7 @@ $(function(){
                 return;
             }
 
+            if(this.chkSafari()) $('p, a, span').css('fontWeight', 400);
             this.menu();
             this.initObj();
             this.scroll();
@@ -121,7 +122,7 @@ $(function(){
                     this.albumIN = false;
                     this.initAlbum();
                 }
-                
+
                 if(scrollTop > fbboxOffset){
                     $('.top-slider').css('opacity', 0);
                 }else{
@@ -335,6 +336,17 @@ $(function(){
                 this.preventall(e);
                 this.singleBoxSrc = e.target.getAttribute('src');
                 this.singleBox = true;
+            },
+            chkSafari: function(){
+                if(!isMobile.phone){
+                    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+                    var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+                    var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+                    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+                    var is_opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
+                    if (is_chrome && is_safari) is_safari = false;
+                    return is_safari;
+                }
             },
             chkIE9: function(){
                 var userAgent = navigator.userAgent;
