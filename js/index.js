@@ -11,6 +11,7 @@
             xfbml      : true,
             version    : 'v2.10'
         });
+        // https://747.evaair.com 正式站網址
         var fbUrl = 'https://technic.webgene.com.tw/project/2017EVA/';
         $('.fbBox .right').append('<fb:comments href="'+fbUrl+'" num_posts="5" width="100%"></fb:comments>');
         FB.XFBML.parse($('.fbBox .right')[0]);
