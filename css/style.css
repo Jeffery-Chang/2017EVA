@@ -306,7 +306,6 @@ body {
   color: white;
   min-width: 314px;
   -webkit-text-size-adjust: 100%;
-  min-height: 700px;
 }
 
 * {
@@ -610,6 +609,13 @@ header a.line:hover:after {
 header a.fb:hover {
   opacity: .7;
   transition: opacity .2s ease;
+}
+
+.safari-fw a {
+  font-weight: 400;
+}
+.safari-fw a:hover {
+  font-weight: 700;
 }
 
 .lang a {
@@ -2032,7 +2038,6 @@ section:nth-child(17) .pic, section:nth-child(19) .pic {
   margin-left: -25px;
 }
 .pic a img.p10 {
-  margin-top: -78px;
   margin-left: -17px;
 }
 .pic a img.p17 {

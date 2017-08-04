@@ -122,12 +122,8 @@ $(function(){
                     this.albumIN = false;
                     this.initAlbum();
                 }
-
-                if(scrollTop > fbboxOffset){
-                    $('.top-slider').css('opacity', 0);
-                }else{
-                    $('.top-slider').css('opacity', 1);
-                }
+                
+                (scrollTop > albumOffset) ? $('.top-slider').css('opacity', 0) : $('.top-slider').css('opacity', 1);
             },
             resize: function(){
                 var winWidth = $(window).width();
