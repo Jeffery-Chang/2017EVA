@@ -108,6 +108,14 @@ body #indexPage header.mobile{
         height: 85vh;
     }
 }
+@media screen and (min-width: 1920px) {
+    .top-slider {
+        left: 50%;
+        max-width: 1920px;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
 .cell {
     position: absolute;
     width: 100%;
@@ -223,63 +231,7 @@ body #indexPage header.mobile{
         transition-delay: .3s;
     }
 }
-`
-@-webkit-keyframes slideInRight {
-    from {
-        -webkit-transform: translate3d(80%, 0, 0);
-        transform: translate3d(80%, 0, 0);
-        visibility: visible;
-    }
 
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
-@keyframes slideInRight {
-    from {
-        -webkit-transform: translate3d(80%, 0, 0);
-        transform: translate3d(80%, 0, 0);
-        visibility: visible;
-    }
-
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
-.slideInRight {
-    -webkit-animation-name: slideInRight;
-    animation-name: slideInRight;
-}
-@-webkit-keyframes slideInLeft {
-    from {
-        -webkit-transform: translate3d(-80%, 0, 0);
-        transform: translate3d(-80%, 0, 0);
-        visibility: visible;
-    }
-
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
-@keyframes slideInLeft {
-    from {
-        -webkit-transform: translate3d(-80%, 0, 0);
-        transform: translate3d(-80%, 0, 0);
-        visibility: visible;
-    }
-
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
-.slideInLeft {
-    -webkit-animation-name: slideInLeft;
-    animation-name: slideInLeft;
-}
 .plane2 {
     -webkit-transform: rotate(0);
     transform: rotate(0);
@@ -300,4 +252,5 @@ body #indexPage header.mobile{
 .scrolling_cloud{
     top: 2500px;
     background: url(../img/c9_2.png) no-repeat;
+    background-size: 100% auto;
 }

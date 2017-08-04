@@ -11,6 +11,9 @@
             xfbml      : true,
             version    : 'v2.10'
         });
+        var fbUrl = 'https://technic.webgene.com.tw/project/2017EVA/';
+        $('.fbBox .right').append('<fb:comments href="'+fbUrl+'" num_posts="5" width="100%"></fb:comments>');
+        FB.XFBML.parse($('.fbBox .right')[0]);
     };
 }(document, 'script', 'facebook-jssdk'));
 
@@ -122,7 +125,7 @@ $(function(){
                     this.albumIN = false;
                     this.initAlbum();
                 }
-                
+
                 (scrollTop > albumOffset) ? $('.top-slider').css('opacity', 0) : $('.top-slider').css('opacity', 1);
             },
             resize: function(){
@@ -179,6 +182,8 @@ $(function(){
             },
             initObj: function(){
                 var $this = this;
+
+
 
                 // WOW
                 if($(window).width() > 736){

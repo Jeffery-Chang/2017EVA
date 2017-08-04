@@ -121,7 +121,7 @@ body {
 }
 
 html,
-body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img {
+body, .wrap, .lightbox, a.closeArea, .index, .top-slider, .cell, .cell > .inner, .slider-img {
   width: 100%;
   height: 100%;
 }
@@ -307,6 +307,13 @@ body {
   min-width: 314px;
   -webkit-text-size-adjust: 100%;
 }
+@media screen and (min-width: 1920px) {
+  html,
+  body {
+    margin: auto;
+    max-width: 1920px;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -470,6 +477,14 @@ header {
   background: none;
   transition: background 500ms ease;
 }
+@media screen and (min-width: 1920px) {
+  header {
+    left: 50%;
+    max-width: 1920px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
 @media screen and (max-width: 1440px) {
   header {
     height: 90px;
@@ -609,13 +624,6 @@ header a.line:hover:after {
 header a.fb:hover {
   opacity: .7;
   transition: opacity .2s ease;
-}
-
-.safari-fw a {
-  font-weight: 400;
-}
-.safari-fw a:hover {
-  font-weight: 700;
 }
 
 .lang a {
@@ -940,7 +948,7 @@ header a.fb:hover {
   }
 }
 html,
-body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img {
+body, .wrap, .lightbox, a.closeArea, .index, .top-slider, .cell, .cell > .inner, .slider-img {
   width: 100%;
   height: 100%;
 }
@@ -1150,10 +1158,16 @@ body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img 
   display: inline-block;
   opacity: 0.3;
   cursor: pointer;
+  padding: 20px;
 }
 @media screen and (max-width: 949px) {
   .lightbox_arrow a {
     opacity: 0.8;
+  }
+}
+@media screen and (max-width: 736px) {
+  .lightbox_arrow a {
+    padding: 10px;
   }
 }
 .lightbox_arrow a:hover {
@@ -1164,11 +1178,28 @@ body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img 
   -webkit-transform: scale(-1);
   transform: scale(-1);
   float: left;
-  padding-left: 4px;
+  padding-left: 24px;
+}
+@media screen and (max-width: 736px) {
+  .lightbox_arrow .left {
+    padding-left: 14px;
+  }
 }
 .lightbox_arrow .right {
   float: right;
-  padding-left: 2px;
+  padding-left: 22px;
+}
+@media screen and (max-width: 736px) {
+  .lightbox_arrow .right {
+    padding-left: 12px;
+  }
+}
+
+a.closeArea {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
 }
 
 .index {
@@ -1354,6 +1385,14 @@ body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img 
   background: url(../img/bg1.png) no-repeat;
   background-size: cover;
   background-position: 8% 80%;
+}
+@media screen and (min-width: 1920px) {
+  .slider-img {
+    left: 50%;
+    max-width: 1920px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
 }
 @media screen and (min-width: 1440px) {
   .slider-img {
@@ -2330,20 +2369,20 @@ h5 {
 @media screen and (max-width: 736px) {
   .c1 {
     width: 315px;
-    bottom: -3%;
+    bottom: -6%;
     left: -13%;
   }
 }
 @media screen and (max-width: 413px) {
   .c1 {
-    bottom: -13%;
+    bottom: -11%;
     width: 340px;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 374px) {
   .c1 {
-    max-width: 100%;
-    bottom: -2%;
+    width: 270px;
+    bottom: 0;
   }
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {

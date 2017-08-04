@@ -124,6 +124,7 @@
                             </ul>
                         </div>
                     </div>
+                    <a class="closeArea" @click="lightbox = false"></a>
                 </div>
             </transition>
             <!-- timeline-->
@@ -131,6 +132,7 @@
                 <div class="lightbox" v-show="singleBox">
                     <a class="close" @click="singleBox = false"><span></span><span></span></a>
                     <div class="main"><img :src="singleBoxSrc" alt=""></div>
+                    <a class="closeArea" @click="singleBox = false"></a>
                 </div>
             </transition>
             <!-- content-->
@@ -574,9 +576,7 @@
                     <div class="sub">感謝有你，共創 25 年精彩回憶</div>
                     <div class="main">
                         <div class="left"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevaairwayscorp.tw%2Fposts%2F861293584017826%3A0" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
-                        <div class="right">
-                            <div class="fb-comments" data-width="100%" data-href="https://technic.webgene.com.tw/project/2017EVA/" data-numposts="5"></div>
-                        </div>
+                        <div class="right"></div>
                     </div>
                     <footer><img src="img/footer.png" alt="">
                         <p>Copyright © EVA Airways. All rights reserved.</p>
