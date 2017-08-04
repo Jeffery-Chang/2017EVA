@@ -241,12 +241,19 @@ $(function(){
                     dots: true,
                     appendDots: $('.story .slider'),
                     infinite: false,
-                    adaptiveHeight: true,
                     prevArrow: $('.story_arrowbox .left'),
                     nextArrow: $('.story_arrowbox .right'),
                     customPaging : function(slider, i) {
                         return '<a style="cursor: pointer;"></a>';
                     },
+                    responsive: [
+                        {
+                            breakpoint: 736,
+                            settings: {
+                                adaptiveHeight: true,
+                            }
+                        }
+                    ]
                 }).on('beforeChange', function(event, slick, currentSlide, nextSlide){
                     $('.indicator').css('margin-left', nextSlide * 25 + 'px');
                 });

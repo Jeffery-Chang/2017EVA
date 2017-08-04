@@ -485,7 +485,7 @@ header {
 }
 header.scrolled {
   position: fixed;
-  background: rgba(255, 255, 255, .95);
+  background: rgba(255, 255, 255, .96);
   height: 80px;
   line-height: 80px;
   color: #4a7d6b;
@@ -541,7 +541,7 @@ header.scrolled .burBox {
 header a {
   color: white;
   font-size: 16px;
-  margin-right: 40px;
+  margin-right: 30px;
   display: inline-block;
   text-decoration: none;
   position: relative;
@@ -623,7 +623,7 @@ header a.fb:hover {
   clear: both;
   margin-right: 40px;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1200px) {
   .menu {
     display: none;
   }
@@ -639,7 +639,7 @@ header a.fb:hover {
   top: 30px;
   display: none;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1200px) {
   .burBox {
     display: block;
   }
@@ -782,7 +782,7 @@ header a.fb:hover {
 .menubox li {
   margin: 20px 0;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1200px) {
   .menubox li.lang li {
     display: inline-block;
     color: white;
@@ -2294,11 +2294,6 @@ h5 {
   left: 0;
   top: -3px;
 }
-@media screen and (max-width: 736px) and (min-width: 414px) {
-  .indicator {
-    top: 0;
-  }
-}
 
 .c1 {
   width: 640px;
@@ -2790,6 +2785,11 @@ h5 {
     margin-top: 50px;
   }
 }
+@media screen and (max-width: 736px) {
+  .QA .content {
+    margin-top: 30px;
+  }
+}
 .QA li {
   font-size: 16px;
   font-size: 1.6rem;
@@ -3019,6 +3019,7 @@ h5 {
   padding-top: 100px;
   text-align: center;
   color: #4a7d6b;
+  min-width: 320px;
 }
 @media screen and (max-width: 768px) {
   .fbBox {
@@ -3055,6 +3056,11 @@ h5 {
     width: 100%;
   }
 }
+@media screen and (max-width: 736px) {
+  .fbBox .main {
+    margin-top: 30px;
+  }
+}
 .fbBox .left {
   width: 49%;
   margin-right: 2%;
@@ -3062,6 +3068,64 @@ h5 {
 @media screen and (max-width: 768px) {
   .fbBox .left {
     margin-right: 0;
+  }
+}
+.fbBox .left iframe {
+  height: 500px;
+}
+@media screen and (max-width: 1280px) {
+  .fbBox .left iframe {
+    height: 460px;
+  }
+}
+@media screen and (max-width: 1123px) {
+  .fbBox .left iframe {
+    height: 420px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .fbBox .left iframe {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fbBox .left iframe {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 645px) {
+  .fbBox .left iframe {
+    height: 470px;
+  }
+}
+@media screen and (max-width: 595px) {
+  .fbBox .left iframe {
+    height: 440px;
+  }
+}
+@media screen and (max-width: 523px) {
+  .fbBox .left iframe {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .fbBox .left iframe {
+    height: 380px;
+  }
+}
+@media screen and (max-device-width: 736px) {
+  .fbBox .left iframe {
+    height: 370px;
+  }
+}
+@media screen and (max-device-width: 413px) {
+  .fbBox .left iframe {
+    height: 350px;
+  }
+}
+@media screen and (max-device-width: 374px) {
+  .fbBox .left iframe {
+    height: 340px;
   }
 }
 .fbBox .right {
