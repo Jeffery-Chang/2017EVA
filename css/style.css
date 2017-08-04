@@ -440,7 +440,8 @@ h2 {
 footer {
   width: 100%;
   padding: 25px 0;
-  border-top: 1px solid rgba(255, 255, 255, .22);
+  border-top: 1px solid rgba(0, 0, 0, .22);
+  text-align: center;
 }
 footer img {
   width: 300px;
@@ -455,6 +456,7 @@ footer p {
   font-size: 12px;
   font-size: 1.2rem;
   margin-top: 10px;
+  color: black;
 }
 
 header {
@@ -2756,15 +2758,13 @@ h5 {
   width: 100%;
   text-align: center;
   background-attachment: fixed;
+  padding-bottom: 100px;
 }
 @media screen and (max-device-width: 768px) {
   .QA {
     background: url(../img/m_bg5.jpg) top left no-repeat;
-    background-size: contain;
-    background-attachment: fixed;
-    height: 100%;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+    background-size: cover;
+    padding-bottom: 0;
   }
 }
 .QA .main {
@@ -2785,7 +2785,7 @@ h5 {
 .QA .content {
   margin-top: 80px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .QA .content {
     margin-top: 50px;
   }
@@ -2816,15 +2816,20 @@ h5 {
   right: 0;
   transition: width .2s ease 0s, left .2s ease 0s;
 }
-.QA li:hover {
-  opacity: 1;
-}
-.QA li:hover:after {
-  width: 100%;
-  left: 0;
+@media screen and (min-width: 768px) {
+  .QA li:hover {
+    opacity: 1;
+  }
+  .QA li:hover:after {
+    width: 100%;
+    left: 0;
+  }
 }
 .QA li.active {
   background: rgba(255, 255, 255, .08);
+}
+.QA li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, .22);
 }
 
 .question {
@@ -3006,6 +3011,66 @@ h5 {
   left: 7px;
   top: 11px;
   z-index: -1;
+}
+
+.fbBox {
+  width: 100%;
+  background: #f3efea;
+  padding-top: 100px;
+  text-align: center;
+  color: #4a7d6b;
+}
+@media screen and (max-width: 768px) {
+  .fbBox {
+    padding-top: 60px;
+  }
+}
+.fbBox .main {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+@media screen and (max-width: 1024px) {
+  .fbBox .main {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fbBox .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .fbBox .main > div {
+    width: 100%;
+  }
+}
+.fbBox .left {
+  width: 49%;
+  margin-right: 2%;
+}
+@media screen and (max-width: 768px) {
+  .fbBox .left {
+    margin-right: 0;
+  }
+}
+.fbBox .right {
+  width: 49%;
+}
+@media screen and (max-width: 768px) {
+  .fbBox .right {
+    margin-top: 10px;
+  }
 }
 
 

@@ -1,3 +1,19 @@
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js		= d.createElement(s); 
+    js.id	= id;
+    js.src	= "//connect.facebook.net/zh_TW/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '355985614832912',
+            xfbml      : true,
+            version    : 'v2.10'
+        });
+    };
+}(document, 'script', 'facebook-jssdk'));
+
 $(function(){
     var indexCtrl = new Vue({
         el: '#indexPage',
@@ -27,7 +43,7 @@ $(function(){
             this.scroll();
             this.resize();
             this.slideBG();
-            
+
 
             $(window).on('scroll', function(){
                 $this.scroll();
@@ -35,8 +51,14 @@ $(function(){
                 $this.resize();
             }).on('load', function(){
                 $this.lightbox = false;
-                $('#splash').delay(500).fadeOut('fast', function(){
-                    $this.initTitle();
+                TweenMax.to($('#splash'), .5, {
+                    height: "0%",
+                    opacity: 0,
+                    display: "none",
+                    delay: .5,
+                    onComplete: function(){
+                        $this.initTitle();
+                    }
                 });
             });
         },
@@ -85,7 +107,7 @@ $(function(){
                 var base = $('header').height() / 2;
                 var width = $(window).width();
                 var albumOffset = $('.album').offset().top;
-                
+
                 if(scrollTop > base){
                     $('header').addClass('scrolled');
                     $('header .logo img').attr('src', 'asset/svg/logo_g.svg');
@@ -93,7 +115,7 @@ $(function(){
                     $('header').removeClass('scrolled');
                     $('header .logo img').attr('src', 'asset/svg/logo_w.svg');
                 }
-                
+
                 if((scrollTop > (albumOffset * 0.6)) && this.albumIN) {
                     this.albumIN = false;
                     this.initAlbum();
@@ -243,7 +265,7 @@ $(function(){
                     y: -50,
                     ease: Power0.easeIn
                 });
-                var liTween = TweenMax.staggerTo(albumLi, .4, {scale: 1, delay: 0, ease: Power0.easeOut}, .15);
+                var liTween = TweenMax.staggerTo(albumLi, .2, {scale: 1, delay: 0, ease: Power0.easeOut}, .1);
                 TL.add(lineTween);
                 TL.add(wordTween);
                 TL.add(liTween);
