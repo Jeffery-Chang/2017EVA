@@ -107,6 +107,7 @@ $(function(){
                 var base = $('header').height() / 2;
                 var width = $(window).width();
                 var albumOffset = $('.album').offset().top;
+                var fbboxOffset = $('.fbBox').offset().top;
 
                 if(scrollTop > base){
                     $('header').addClass('scrolled');
@@ -119,6 +120,12 @@ $(function(){
                 if((scrollTop > (albumOffset * 0.6)) && this.albumIN) {
                     this.albumIN = false;
                     this.initAlbum();
+                }
+                
+                if(scrollTop > fbboxOffset){
+                    $('.top-slider').css('opacity', 0);
+                }else{
+                    $('.top-slider').css('opacity', 1);
                 }
             },
             resize: function(){

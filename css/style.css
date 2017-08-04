@@ -966,7 +966,7 @@ body, .wrap, .lightbox, .index, .top-slider, .cell, .cell > .inner, .slider-img 
   }
 }
 @media screen and (max-width: 736px) {
-  .lightbox .main {
+  .lightbox .album_main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2032,7 +2032,7 @@ section:nth-child(17) .pic, section:nth-child(19) .pic {
   margin-left: -25px;
 }
 .pic a img.p10 {
-  margin-top: -180px;
+  margin-top: -78px;
   margin-left: -17px;
 }
 .pic a img.p17 {
@@ -2968,6 +2968,10 @@ h5 {
   top: 0;
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
+}
+#loader img {
+  width: 50px;
+  height: 47px;
 }
 
 #loader:after {
