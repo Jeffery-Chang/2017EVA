@@ -69,11 +69,11 @@
                 <nav class="menu">
                     <ul>
                         <span class="left">
-                            <li><a class="line" href="#" role="album">{{ langData.menu_01 }}</a></li>
-                            <li><a class="line" href="#" role="history">{{ langData.menu_02 }}</a></li>
-                            <li><a class="line" href="#" role="story">{{ langData.menu_03 }}</a></li>
-                            <li><a class="line" href="#" role="QA">{{ langData.menu_04 }}</a></li>
-                            <li><a class="line" href="#" role="fbBox">{{ langData.menu_05 }}</a></li>
+                            <li><a class="line" href="#" role="album" @click="gaclick('menu_image')">{{ langData.menu_01 }}</a></li>
+                            <li><a class="line" href="#" role="history" @click="gaclick('menu_timeline')">{{ langData.menu_02 }}</a></li>
+                            <li><a class="line" href="#" role="story" @click="gaclick('menu_history')">{{ langData.menu_03 }}</a></li>
+                            <li><a class="line" href="#" role="QA" @click="gaclick('menu_QA')">{{ langData.menu_04 }}</a></li>
+                            <li><a class="line" href="#" role="fbBox" @click="gaclick('menu_fanpage')">{{ langData.menu_05 }}</a></li>
                             <li><a class="fb" href="#" role="fb"><span class="icon-fb"></span></a></li>
                         </span>
                         <li class="lang">
@@ -92,11 +92,11 @@
             <div class="menubox overlay" id="overlay" :class="{ 'open' : burger == true }">
                 <nav class="overlay-menu">
                     <ul>
-                        <li><a class="line" href="#" role="album">{{ langData.menu_01 }}</a></li>
-                        <li><a class="line" href="#" role="history">{{ langData.menu_02 }}</a></li>
-                        <li><a class="line" href="#" role="story">{{ langData.menu_03 }}</a></li>
-                        <li><a class="line" href="#" role="QA">{{ langData.menu_04 }}</a></li>
-                        <li><a class="line" href="#" role="fbBox">{{ langData.menu_05 }}</a></li>
+                        <li><a class="line" href="#" role="album" @click="gaclick('menu_image')">{{ langData.menu_01 }}</a></li>
+                        <li><a class="line" href="#" role="history" @click="gaclick('menu_timeline')">{{ langData.menu_02 }}</a></li>
+                        <li><a class="line" href="#" role="story" @click="gaclick('menu_history')">{{ langData.menu_03 }}</a></li>
+                        <li><a class="line" href="#" role="QA" @click="gaclick('menu_QA')">{{ langData.menu_04 }}</a></li>
+                        <li><a class="line" href="#" role="fbBox" @click="gaclick('menu_fanpage')">{{ langData.menu_05 }}</a></li>
                         <li class="lang">
                             <ul>
                                 <li><a :class="{ 'active' : langTP == 'zh' }" href="#" @click="changeLang($event, 'zh')">繁中 </a></li>
@@ -203,9 +203,9 @@
                                 <div class="sub">{{ langData.photo_H2 }}</div>
                                 <div class="tab">
                                     <ul>
-                                        <li :class="{ 'active' : albumFG == true }" @click="albumFG = true"><a :style="{ 'cursor': 'pointer'}"><span class="icon-camera"></span><span>{{ langData.photo }}</span></a></li>
+                                        <li :class="{ 'active' : albumFG == true }" @click="{ albumFG = true, gaclick('image_photo') }"><a :style="{ 'cursor': 'pointer'}"><span class="icon-camera"></span><span>{{ langData.photo }}</span></a></li>
                                         <li class="line"></li>
-                                        <li :class="{ 'active' : albumFG == false }" @click="albumFG = false"><a :style="{ 'cursor': 'pointer'}"><span class="icon-video"></span><span>{{ langData.video }}</span></a></li>
+                                        <li :class="{ 'active' : albumFG == false }" @click="{ albumFG = false, gaclick('image_video') }"><a :style="{ 'cursor': 'pointer'}"><span class="icon-video"></span><span>{{ langData.video }}</span></a></li>
                                         <div class="bar" :class="{ 'move' : albumFG == false }"></div>
                                     </ul>
                                 </div>

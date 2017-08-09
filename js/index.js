@@ -213,6 +213,13 @@
         { 'index': 10, action: 56, action_end: 57 },
         { 'index': 11, action: 58, action_end: 60 },
     ];
+    var gaCrtl = {
+        image: false,
+        timeline: false,
+        history: false,
+        QA: false,
+        fanpage: false,
+    };
     var router = new VueRouter({
         routes: [
             { path: '/zh', name: 'zh'},
@@ -241,7 +248,8 @@
         beforeMount: function(){
             var routerTP = this.$route.name;
             this.langTP = this.$route.name;
-            this.langData = lang[routerTP][0];
+            // this.langData = lang[routerTP][0];
+            this.langData = lang['zh'][0];
         },
         mounted: function(){
             var $this = this;
@@ -275,6 +283,8 @@
                     }
                 });
             });
+
+            gapage('index');
         },
         methods:{
             preventall: function(event){
@@ -291,11 +301,12 @@
                         if(dir == 'fb'){
                             var app_id = '355985614832912';
                             var fbBack_url = '?fb_back=1';
-                            var url = location.href;
-                            var redirect_uri = location.href;
+                            var url = location.origin + location.pathname;
+                            var redirect_uri = location.origin + location.pathname;
                             var share_u;
                             share_u = encodeURIComponent(url + fbBack_url);
-                            location.href = 'https://www.facebook.com/dialog/share?app_id=' + app_id + '&display=popup&href=' + share_u + '&redirect_uri=' + redirect_uri;
+                            // location.href = 'https://www.facebook.com/dialog/share?app_id=' + app_id + '&display=popup&href=' + share_u + '&redirect_uri=' + redirect_uri;
+                            trackWaitJump('menu_fbshare', 'https://www.facebook.com/dialog/share?app_id=' + app_id + '&display=popup&href=' + share_u + '&redirect_uri=' + redirect_uri);
                             return;
                         }
                         if(dir == 'history') padding = 100;
@@ -321,8 +332,16 @@
                 var base = $('header').height() / 2;
                 var width = $(window).width();
                 var albumOffset = $('.album').offset().top;
+                var tlOffset = $('.history').offset().top;
+                var storyOffset = $('.story').offset().top;
+                var qaOffset = $('.QA').offset().top;
                 var fbboxOffset = $('.fbBox').offset().top;
+                var offsetList = [albumOffset, tlOffset, storyOffset, qaOffset, fbboxOffset];
+                var gaList = ['image', 'timeline', 'history', 'QA', 'fanpage'];
+                var padding = 0;
+                var headerH = $('header').height();
 
+                // header
                 if(scrollTop > base){
                     $('header').addClass('scrolled');
                     $('header .logo img').attr('src', 'asset/svg/logo_g.svg');
@@ -337,6 +356,20 @@
                 }
 
                 (scrollTop > albumOffset) ? $('.top-slider').css('opacity', 0) : $('.top-slider').css('opacity', 1);
+
+                // gapage
+                $.each(offsetList, function(key, obj){
+                    var nowSTR = gaList[key];
+                    var nowFG = gaCrtl[nowSTR];
+                    if(nowSTR == 'image') padding = 50;
+                    if(nowSTR == 'timeline') padding = 150;
+                    if(nowSTR == 'timeline' && width < 450) padding = 50;
+                    if(nowSTR == 'history' && width < 450) padding = -100;
+                    if(scrollTop >= (obj - (headerH / 2) - padding) && !nowFG){
+                        gaCrtl[nowSTR] = true;
+                        gapage(nowSTR);
+                    }
+                });
             },
             resize: function(){
                 var winWidth = $(window).width();
@@ -553,7 +586,7 @@
             changeLang: function(e, tp){
                 this.preventall(e);
                 this.langTP = tp;
-                this.langData = lang[tp][0];
+                // this.langData = lang[tp][0];
                 this.$router.replace(tp);
             },
             chkSafari: function(){
