@@ -17,15 +17,19 @@
         FB.XFBML.parse($('.fbBox .right')[0]);
     };
 }(document, 'script', 'facebook-jssdk'));
-
+(function(a){a.preload=function(){var c=[],b=arguments.length;for(;b--;){c.push(a("<img />").attr("src",arguments[b]));}};})(jQuery);
 (function(){
     var lang = {
-        "zh":[{  
+        "zh":[{
+            "title":"長榮航空 | 那些年，我們一起搭的747-400",
             "menu_01":"影像紀實",
             "menu_02":"747 - 400 大事紀",
             "menu_03":"歷史回顧",
             "menu_04":"QA 小教室",
             "menu_05":"專屬回憶",
+            "index_tt1":"asset/svg/tt1.svg",
+            "index_tt3":"asset/svg/tt3.svg",
+            "index_base":"img/tt_base.png",
             "index_H1":"那些年我們一起搭的747 - 400",
             "index_H2_PC":"<span>也許你曾在 747-400 上，看著窗外的異國風景，或是曾抬頭仰望，</span><span>意外發現她的蹤跡，因為你的參與，才能讓 747-400 創造出這麼多美好回憶。</span>",
             "index_H2_M":"<span>也許你曾經抬頭仰望，或隨之翱翔天際</span><span>跟著747-400的蹤跡，發現美好風景</span><span>因為有你，一同創造藍天中的美好回憶</span>",
@@ -89,16 +93,14 @@
             "History_03_2":"1992年12月12日以第一、二架747-400客機開闢台北-洛杉磯航線，開始經營越太平洋航線，奠定長榮航空全球飛航網路佈局的基礎，成就長榮航空發展為由台北直飛北美航班最密集的航空公司。直至今年底，長榮航空每週將有88個航班由台北直飛北美8個主要門戶城市，密集的班次除了便利台灣民眾往返北美，也吸引北美或東南亞旅客來台轉機。2003年1月29日長榮航空兩岸首架春節包機，航段為台北-澳門(技術降落)-上海，就是由B747-400客機執飛，拉開兩岸通航的序曲。",
             "History_04_1":"完成無數任務，747-400光榮退役",
             "History_04_2":"747-400 Combi其特有的主貨艙配置，可載運特殊貨物(如大型機台、展品以及活生動物等)，受到貨主的歡迎，並使客機機隊調度更有彈性。但因科技日新月異，各類電子產品輕薄短小，貨艙需求量小，且長榮航空新一代的長程航線主力客機777-300ER，腹艙載貨量大，逐漸取代747-400 Combi，因此747-400 Combi於 2015年1月5日正式退役。2017年8月21日747-400客機完成香港-台北載客任務後，也將全數退役，747-400貨機也規劃於2019年全數除役。",
-            "History_05_1":"長榮航空引進，勝任飛航主力",
-            "History_05_2":"長榮航空於 1989 年由長榮集團總裁張榮發成立，同年 10 月 6 日向美國波音公司及麥道道格拉斯簽訂購買 26 架飛機合約，總金額達 36 億美元。共計引進 7 架 747-400 全客機、10 架 747-400 Combi (客貨機)、3 架 747-400 貨機。早年該機型不論是飛機設計、性能或客艙舒適度均無其他機型能出其右，為長榮航空草創時期長程航線的主力機隊。",
-            "History_06_1":"747-400擔綱過的重要任務",
-            "History_06_2_1":"元首專機（客貨兩用）",
-            "History_06_2_2":"<li>1995.04 擔任李登輝總統出訪中東專機</li><li> 2000.08 擔任陳水扁總統「民主外交 友誼之旅」專機</li><li>2001.05 擔任陳水扁總統「合作共榮 睦誼之旅」專機</li><li>2009.06 擔任馬英九總統「久誼之旅」專機</li>",
-            "History_06_2_3":"保育動物專機（客貨兩用）",
-            "History_06_2_4":"<li>1999 擔任「無尾熊專機」無尾熊哈雷(Harley)及派翠克(Patrick)來台專機</li><li>2008 擔任載運大陸國寶大貓熊團團、圓圓來台專機</li><li>2011擔任北海道保育動物丹頂鶴「BIG」及「貴華」來台專機</li>",
-            "History_06_2_5":"首航班任務（客機）",
-            "History_06_2_6_1":"<li>1992.12.12 台北-洛杉磯</li><li>1993.06.08 台北-西雅圖-紐約</li><li>1995.12.13 台北-洛杉磯-巴拿馬</li><li>1998.06.11 高雄-洛杉磯</li>",
-            "History_06_2_6_2":"<li>1999.06.22 台北-溫哥華</li><li>2003.01.29 台北-澳門-上海</li><li>2008.12.15 台北-杭州</li>",
+            "History_05_1":"747-400擔綱過的重要任務",
+            "History_05_2_1":"元首專機（客貨兩用）",
+            "History_05_2_2":"<li>1995.04 擔任李登輝總統出訪中東專機</li><li> 2000.08 擔任陳水扁總統「民主外交 友誼之旅」專機</li><li>2001.05 擔任陳水扁總統「合作共榮 睦誼之旅」專機</li><li>2009.06 擔任馬英九總統「久誼之旅」專機</li>",
+            "History_05_2_3":"保育動物專機（客貨兩用）",
+            "History_05_2_4":"<li>1999 擔任「無尾熊專機」無尾熊哈雷(Harley)及派翠克(Patrick)來台專機</li><li>2008 擔任載運大陸國寶大貓熊團團、圓圓來台專機</li><li>2011擔任北海道保育動物丹頂鶴「BIG」及「貴華」來台專機</li>",
+            "History_05_2_5":"首航班任務（客機）",
+            "History_05_2_6_1":"<li>1992.12.12 台北-洛杉磯</li><li>1993.06.08 台北-西雅圖-紐約</li><li>1995.12.13 台北-洛杉磯-巴拿馬</li><li>1998.06.11 高雄-洛杉磯</li>",
+            "History_05_2_6_2":"<li>1999.06.22 台北-溫哥華</li><li>2003.01.29 台北-澳門-上海</li><li>2008.12.15 台北-杭州</li>",
             "QA_H1":"QA小教室",
             "QA_H2":"解開疑惑，挖掘更多小祕密",
             "QA_01_Q":"請問 EVA 總計營運過幾架(買/租) 747-400 客機？",
@@ -119,21 +121,219 @@
             "QA_08_Q":"改艙之後升級哪些服務？有哪些創新作法？",
             "QA_08_A":" 將客艙硬體設備提升至 777 機隊的標準，增加超級商務艙後躺角度，乘客於長 途飛行時更加舒適，且增加個人隱私性。改善娛樂系統，全機各艙等均為個人 隨選影音設備。增加廚房設備，提供乘客更佳的餐飲。更新廁所設備，提供更 寬敞的空間供乘客使用。",
             "QA_09_Q":"EVA 會如何處理退役後的 747-400 客機？",
-            "QA_09_A":"747-400 客機退役後將會進行拆解零件出售，發揮物盡其用之最大剩餘價值。 "
+            "QA_09_A":"747-400 客機退役後將會進行拆解零件出售，發揮物盡其用之最大剩餘價值。",
+            "FB_H1":"專屬回憶",
+            "FB_H2":"感謝有你，共創25年精彩回憶"
         }],
-        "en":[{  
-            "menu_01":"VIDEO",
-            "menu_02":"747 - 400 EVENT",
-            "menu_03":"HISTORY",
+        "en":[{
+            "title":"EVA Air | Farewell! Boeing 747-400",
+            "menu_01":"Gallery",
+            "menu_02":"Milestones",
+            "menu_03":"History",
             "menu_04":"Q & A",
-            "menu_05":"MEMORY"
+            "menu_05":"Memories",
+            "index_tt1":"asset/svg/tt_en2.svg",
+            "index_tt3":"asset/svg/tt_en1.svg",
+            "index_base":"img/tt_en.png",
+            "index_H1":"Farewell! Boeing 747-400",
+            "index_H2_PC":"Maybe you used to fly with one of our boeing 747-400, watching the exotic scenery just beyond the window, or look up at the skies, and accidentally find her trace. It is just your participation that enables the 747-400 to create so many beautiful memories.</span>",
+            "index_H2_M":"<span>Follow the trail of 747-400 </span><span>To find beautiful scenery and<span><span>Create memories with the blue sky.",
+            "photo_H1":"Gallery",
+            "photo_H2":"Review events and reproduce the elegance of the Queen of the Skies.",
+            "photo":"Photo",
+            "video":"Video",
+            "photo_01":"1992-11-02<br>Boeing in Seattle<br>747-400 delivery ceremony",
+            "photo_02":"<span>1992-11-02<br>The 1st and 2nd 747-400 delivery ceremony</span>",
+            "photo_03":"1992-11-24<br>The 1st and 2nd 747-400 Welcome Ceremony of Arrival in Taiwan",
+            "photo_04":"1992-11-24<br>The 1st and 2nd 747-400 Welcome Ceremony  of New Boeing 747-400 Arrival in Taiwan",
+            "photo_05":"1993-05-18<br>The 3rd 747-400<br>Receiving Ceremony  of New Boeing 747-400 Arrival in Taiwan",
+            "photo_06":"1993-09-23<br>Celebration of the 5th 747-400 Receiving Ceremony of New Plane's Arrival in Taiwan",
+            "photo_07":"2008-03-14<br>747-400 cabin renovation",
+            "photo_08":"EVA Air 747-400<br>The 1st generation Livery",
+            "photo_09":"EVA Air 747-400<br>The 2nd generation Livery",
+            "photo_10":"EVA Air 747-400<br>in-flight service",
+            "photo_11":"EVA Air 747-400<br>gourmet meals",
+            "photo_12":"EVA Air 747-400<br>cabin environment",
+            "photo_in_01":"1992-11-02 747-400 Delivery Ceremony and banquet of the Boeing Company in Seattle",
+            "photo_in_02":"1992-11-02 Delivery Ceremony of EVA Air's 1st and 2nd boeing 747-400.",
+            "photo_in_03":"1992-11-24 Welcome Ceremony of EVA Air's 1st and 2nd boeing 747-400 arriving in Taiwan",
+            "photo_in_04":"1992-11-24 Welcome Ceremony of EVA Air's 1st and 2nd boeing 747-400 arriving in Taiwan",
+            "photo_in_05":"1993-05-18 Welcome Ceremony of EVA Air's 3rd boeing 747-400 arriving in Taiwan",
+            "photo_in_06":"1993-09-23 Welcome Ceremony of EVA Air's 5th boeing 747-400 arriving in Taiwan",
+            "photo_in_07":"2008-03-14 Cabin renovation for boeing 747-400.",
+            "photo_in_08":"EVA Air's 1st generation livery on boeing 747-400  ",
+            "photo_in_09":"EVA Air's 2nd generation livery on boeing 747-400  ",
+            "photo_in_10":"Boeing 747-400 in-flight service of EVA Air",
+            "photo_in_11":"747-400 gourmet meals of EVA Air.",
+            "photo_in_12":"747-400 cabin environment of EVA Air",
+            "Timeline_H1":"Milestones",
+            "Timeline_H2":"Moments and milestones after 25 years of service",
+            "Timeline_01":" <p>1990.07.12</p><p>Display the B747-400 aircraft model,<span>and publish the corporate identity system for the first time</span></p>",
+            "Timeline_02":"<p>1992.11.02</p><p>The 1st and 2nd B747-400 new aircrafts<span>delivery ceremony were held in Boeing, Seattle.</span></p>",
+            "Timeline_03":"<p>1992.11.24</p><p>The 1st and 2nd B747-400<span>Welcome Ceremony of new aircrafts arrivaing in Taiwan</span></p>",
+            "Timeline_04":"<p>1992.12.12</p><p>The transpacific air route from Taipei <br>to Los Angeles was opened up.</p>",
+            "Timeline_05":"<p>1993.05.18</p><p>The 3rd B747-400 Welcome Ceremony of new aircraft arriving in Taiwan</p>",
+            "Timeline_06":"<p>1993.09.16</p><p>The 1st B747-400 Combi Aircraft<span>delivery ceremony was held in Boeing, Seattle.</span></p>",
+            "Timeline_07":"<p>1993.09.23</p><p>The 5th B747-400 Welcome Ceremony of new aircraft arriving in Taiwan</p>",
+            "Timeline_08":"<p>1999.07</p><p>The two koalas \"Patrick\" and<span>\"Halley\" carried by EVA Air's Boeing</span><span>747-400 Combi Aircraft from Australia arrived in Taiwan.</span></p>",
+            "Timeline_09":"<p>2000.07.15</p><p>The 1st B747-400 cargo<span>made its first public appearance at Terminal 2 of Chiang Kai-shek International Airport.</span></p>",
+            "Timeline_10":"<p>2001.11.20</p><p>B747-400 2nd generation livery made its first appearance.</p>",
+            "Timeline_11":"<p>2004.10</p><p>The two koalas \"Pearl\" and \"Joey\" were carried to Taiwan.</p>",
+            "Timeline_12":"<p>2005.02.18</p><p>Signing Ceremony of B747-400<br>Large Cargo Freighter (LCF) retrofit<span>with Boeing.</span></p>",
+            "Timeline_13":"<p>2007.04.22</p><p><span>The 1st B747-400 completed the </span><span>conversion from a passenger aircraft to a cargo aircraft and started operation in May.</span></p>",
+            "Timeline_14":"<p>2007.06.15</p><p>The 1st B747 passenger aircraft completed<span>interior decoration upgradesof </span><span> Premium Laurel Class, Elite Class and Economy Class.</span></p>",
+            "Timeline_15":"<p>2007.10.04</p><p>In-flight Bar in the first class cabin of B747-400 was newly decorated.</p>",
+            "Timeline_16":"<p>2008.03.14</p><p>B747-400 passenger cabin<br>was newly decorated.</p>",
+            "Timeline_17":"<p>2008.12.22</p><p>B747-400 Combi aircraft undertook the charter service to transport the <br>pandas \"Tuantuan\" and \"Yuanyuan\" from Sichuan to Taiwan.</p>",
+            "Timeline_18":"<p>2013.09.13 </p><p>B747-400 Combi<span>the combi aircraft (No. B-16403) was decommissioned.</span></p>",
+            "Timeline_19":"<p>2015.01.05 </p><p>The last Boeing 747-400 Combi aircraft<span>(No. B-16409) completed the last flight.</span><span>BR868 was formally decommissioned after the flight from Hong Kong to Taoyuan.</span><span>747-400 Combi aircraft was also formally announced to become the past.</span></p>",
+            "Timeline_20":"<p>2017.08.24</p><p>BR892 completed the last passenger flight<span>task from Hong Kong International Airport</span><span>to Taoyuan International Airport.</span></p>",
+            "History_H1":"Historical review",
+            "History_H2":"Legendary life of 747-400",
+            "History_01_1":"Introduced by EVA Air and promoted to the main force of air traffic",
+            "History_01_2":"EVA Air was founded by Y. F. Chang, president of Evergreen Group, in 1989, and it signed contracts with Boeing Company and McDonnell Douglas to purchase 26 planes on October 6 in the same year, with the total amount being USD 3.6 billion. Seven 747-400 passenger aircraft, ten 747-400 Combi and three 747-400 cargo planes were introduced altogether. The model design, performance or comfort of 747-400 model were better than those of other models, and it was the main fleet of long haul routes during the pioneering stage of EVA Air. ",
+            "History_02_1":"A passenger airplane started the first flight formally and inspired the demeanor of cabin class.",
+            "History_02_2":"Flight started formally in 1991, the 1st and 2nd 747-400 passenger aircraft were delivered at Boeing Company, Seattle on Nov. 2, 1992, with first class, business class, economy deluxe class and economy class planned, which pioneered the 4th class (economy deluxe class) between business class and economy class. Many airline companies followed this innovative practice and the founder Chang, Yung-fa especially, headed for America to pick up the planes, and flew back to Taiwan on Nov. 24 in the same year.",
+            "History_03_1":"Fly over the Pacific and new global network for services",
+            "History_03_2":"The 1st and 2nd 747-400 passenger aircraft opened up the flight route from Taipei to Los Angeles on Dec. 12, 1992, which started the trans-Pacific flight, laid the foundation of the global flight network distribution for EVA Air and made EVA Air own the most intensive flights from Taipei to North America. Up to the end of the year, EVA Air will have 88 flights from Taipei to 8 major gateway cities in North America each week. The intensive flights provide convenience for Taiwanese to travel to and from North America and also attract tourists from North America or Southeast Asia to transfer in Taiwan. On January 29, 2003, EVA Air arranged B747-400 passenger aircraft to carry out the 1st spring festival charter flight from Taipei through Macao (technical landing) to Shanghai, which kicked off the cross-Strait direct flight. ",
+            "History_04_1":"747-400 completes numerous tasks and is decommissioned.",
+            "History_04_2":"The unique main cargo cabin of 747-400 Combi can carry special cargoes (such as large machines, exhibits and live animals), which is quite popular among owners of cargoes and makes the passenger aircraft fleet dispatching more flexible. However, as science and technology are changing rapidly and various electronic products become lighter, thin, short and small, the demand of cargo space is small. EVA Air's new generation aircraft 777-300ER for long haul routes possesses great cargo capacity, so it has gradually replaced the 747-400 Combi; the 747-400 Combi was formally decommissioned on January 5, 2015. After completing the flight between Hong Kong and Taipei on August 21, 2017, all 747-400 passenger aircraft were decommissioned and 747-400 cargo aircraft were also planned to be decommissioned in 2019.",
+            "History_05_1":"Important tasks undertaken by the 747-400",
+            "History_05_2_1":"Charter flight for head of state (combi aircraft)",
+            "History_05_2_2":"<li>1995.04, served as a charter flight for the then president Lee, Teng-hui to visit the Middle East</li><li>2000.08, 2000, served as a charter flight for the then president Chen, Shui-bian on the \"democratic diplomacy and friendship journey\"</li><li>2001.05, served as a charter flight for the then  president Chen Shui-bian on the \"cooperative prosperity and harmonious journey\"</li><li>2009.06, served as a charter flight for the then President Ma Ying-jeou on the \"journey of permanent friendship\"</li>",
+            "History_05_2_3":"Charter flight for protected animals (combi aircraft)",
+            "History_05_2_4":"<li>In 1999, served as a charter flight for the two koalas \"Harley\" and \"Patrick\"</li><li>In 2008, served as a charter flight for the two pandas \"Tuantuan\" and \"Yuanyuan\"</li><li>In 2011, served as a charter flight for the red-crowned cranes \"BIG\" and \"GUIHUA\",that were protected in Hokkaido.</li>",
+            "History_05_2_5":"First flight (passenger plane)",
+            "History_05_2_6_1":"<li>1992.12.12 Taipei-Los Angles</li><li>1993.06.08 Taipei-Seattle-New York</li><li>1995.12.13 Taipei-Los Angles-Panama</li><li>1998.06.11 Kaohsiung-Los Angles</li>",
+            "History_05_2_6_2":"<li>1999.06.22 Taipei-Vancouver</li><li>2003.01.29 Taipei-Macao-Shanghai</li><li>2008.12.15 Taipei-Hangzhou</li>",
+            "QA_H1":"Q & A",
+            "QA_H2":"Solve the puzzle and dig for more secrets",
+            "QA_01_Q":"How many 747-400 passenger aircraft has EVA run (purchased / rented)?",
+            "QA_01_A":"EVA runs seven 747-400 passenger aircraft (B-16401, B-16402, B-16403, B-16405, B-16410, B-16411 and B-16412), among which B-16403 and B-16405 flew to America were converted into COMBI (combi aircraft) in September and October, 1994, respectively, and in April, 2004, B-16401 and B-16402 were sold to GECAS and rented back, and then in 2007, they were delivered to IAI, an Israeli refitting factory to be converted into cargo aircraft. The B-16402 was returned after the expiration of tenancy term in November, 2016, and it is predicted that B-16401 will be returned in July, 2017. ",
+            "QA_02_Q":"How many destinations have EVA 747-400 passenger aircraft flown to? In which air routes do they implement the first flight?",
+            "QA_02_A_1":"Destinations / <div class=\"list\"><span>LAX,SEA,EWR,SFO,YVR</span><span>VIE,LGW,LHR,CDG</span><span>BKK,SIN,PEN,SGN,MNL,KUL,JKT,DPS </span><span>CTS,HKD,HND</span><span>KHH,HKG,MFM</span><span>PVG,PEK,HGH,CAN,SXZ</span></div>",
+            "QA_02_A_2":"First flight /<div class=\"list\"><span>1992.12.12 TPE-LAX</span><span>1993.06.08 TPE-SEA-EWR</span><span>1995.12.13 TPE-LAX-PTY</span><span>1998.06.11 KHH-LAX</span><span>1999.06.22 TPE-YVR</span><span>2008.12.15 TPE-HGH</span></div>",
+            "QA_03_Q":"Which is the longest route for EVA 747-400 passenger aircraft? How far is the flying distance? ",
+            "QA_03_A":"The longest route:  TPE (Taipei)-LAX (Los  Angeles)-PTY (Panama)-LAX (Los Angles)-TPE (Taipei)<br>The longest direct flight route segment is from LAX to TPE, with a flying distance of about 6,500 nm. ",
+            "QA_04_Q":"How long has EVA's 747-400 passenger aircraft fleet served? How many passengers have been carried? How far is the accumulated flying distance? How many times would if circling the Earth?",
+            "QA_04_A":" Since the 1st 747-400 passenger aircraft was received in 1992, EVA's 747-400 passenger aircraft fleet has served over 25 years (the accumulated number of passengers and flying distance statistics are unavailable).",
+            "QA_05_Q":"Why does EVA consider adopting 747-400 passenger aircraft? When was the first 747 introduced to the fleet? When was it put into service formally?",
+            "QA_05_A":"Since the Northwest Airlines started to fly the 1st 747-400 passenger aircraft in February, 1989, 747-400 passenger aircraft have occupied the market of wide-body airliners, whose design, performance or cabin comfort surpasses those of other models. The Company imported the 1st 747-400 passenger aircraft in November, 1992 and put it into operation on December 12, 1992, with the first flight from Taipei to Los Angeles.<br>The imported new Boeing 747-400 initiated the 4th cabin class in the world, economy deluxe class and passengers only have to pay the ticket rates a little higher than economy class; they can then enjoy the service as in the business class cabin. Many airline companies follow this initiative practice.<br>The 1st Boeing 747-700 passenger aircraft had the cabin renovated in 2007, with Premium Laurel Class, Elite Class and Economy Class equipped.",
+            "QA_06_Q":"Which Cabin Class did an original 747-400 passenger aircraft have? ",
+            "QA_06_A":"SUPER FIRST CLASS<br>SUPER DELUXE CLASS<br>ECONOMY DELUXE CLASS<br>ECONOMY CLASS",
+            "QA_07_Q":"How many passengers could be carried before the cabin renovation? ",
+            "QA_07_A":"The original four-class cabins were equipped with 368 seats and the three-class cabins after the renovation have 372 seats. ",
+            "QA_08_Q":"Which services are upgraded after the cabin renovation? What kind of initiative practices are adopted? ",
+            "QA_08_A":" The hardware equipment of passenger cabins is improved to the standard of 777 fleets, with the backwards lying angle in the super deluxe class included, and passengers can feel more comfortable during long-haul flight, and personal privacy is protected. The in-flight entertainment  system has been improved and there is self-service audio-video equipment in the cabins of all classes. Galley equipment is added to provide passengers with better dining service. Laboratory facilities are  updated to provide more spacious room for passengers. ",
+            "QA_09_Q":"How does EVA deal with decommissioned 747-400 passenger aircraft?",
+            "QA_09_A":"747-400 passenger aircraft will be dismantled and sold after decommissioning, to bring their surplus value into full use.",
+            "FB_H1":"Our Memories",
+            "FB_H2":"Thank you for being part of our 25 years of wonderful momories."
         }],
-        "jp":[{  
-            "menu_01":"ビデオ",
-            "menu_02":"747 - 400 イベントカレンダー",
-            "menu_03":"ヒストリ",
-            "menu_04":"質疑応答",
-            "menu_05":"メモリ"
+        "jp":[{
+            "title":"エバー航空 | あの頃の747 - 400の想い出",
+            "menu_01":"ギャラリー",
+            "menu_02":"747 - 400 の沿革",
+            "menu_03":"ヒストリー",
+            "menu_04":"Q & A",
+            "menu_05":"特別な思い出",
+            "index_base":"img/tt_jp.png",
+            "index_tt1":"asset/svg/tt_jp1.svg",
+            "index_tt3":"asset/svg/tt_jp2.svg",
+            "index_H1":"あの頃の747 - 400の想い出",
+            "index_H2_PC":"<span> 747-400 の窓から異国の風景を眺めたり、 地上から747-400を仰ぎ見たり</span><span>747-400 の美しい思い出が紡がれていきます。</span>",
+            "index_H2_M":"<span>空を仰ぎみたり、一緒に空を翔けぬけたり、747-400の後には美しい光景がありました。皆様とともに、青空の中の美しい思い出を紡いでいきます。</span>",
+            "photo_H1":"ギャラリー",
+            "photo_H2":"これまでの出来事をふり返り、「空の女王」の歴史を振り返ります",
+            "photo":"写真",
+            "video":"映像",
+            "photo_01":"<span>1992-11-02<br>シアトルボーイング社での747-400 引き渡し式</span>",
+            "photo_02":"1992-11-02<br>第1、第2機747-400の<br>引き渡し式",
+            "photo_03":"1992-11-24<br>第1、第2機747-400の<br>台湾での歓迎式典",
+            "photo_04":"1992-11-24<br>第1、第2機747-400<br>新機体の台湾での歓迎式典",
+            "photo_05":"1993-05-18<br>第3機747-400<br>新機体の台湾での交代式",
+            "photo_06":"1993-09-23<br>第5機747-400<br>新機体を祝う台湾での交代式",
+            "photo_07":"2008-03-14<br>747-400 客室改装",
+            "photo_08":"エバー航空747-400<br>第1期 機体塗装",
+            "photo_09":"エバー航空747-400<br>第2期 機体塗装",
+            "photo_10":"エバー航空747-400<br>客室乗務",
+            "photo_11":"エバー航空747-400<br>機内食",
+            "photo_12":"エバー航空747-400<br>客室環境",
+            "photo_in_01":"1992-11-02 シアトルボーイング社 の747-400 引き渡し式とパーティ",
+            "photo_in_02":"1992-11-02 エバー航空 第1機および第2機 747-400 の引き渡し式",
+            "photo_in_03":"1992-11-24 エバー航空 第1、第2機 747-400 台湾での歓迎式典",
+            "photo_in_04":"1992-11-24 エバー航空第1、第2機 747-400 新機体の台湾での歓迎式典",
+            "photo_in_05":"1993-05-18 エバー航空第3機 747-400 新機体の台湾での交代式",
+            "photo_in_06":"1993-09-23 エバー航空の第5機 747-400 新機体到着を祝う台湾での交換式",
+            "photo_in_07":"2008-03-14 エバー航空 747-400 客室改装",
+            "photo_in_08":"エバー航空 747-400 第1期機体塗装",
+            "photo_in_09":"エバー航空 747-400 第2期 機体塗装",
+            "photo_in_10":"エバー航空 747-400 客室乗務",
+            "photo_in_11":"エバー航空 747-400 機内食",
+            "photo_in_12":"エバー航空 747-400 客室環境",
+            "Timeline_H1":"747-400の沿革",
+            "Timeline_H2":" 駆け抜けた25年間をつづります",
+            "Timeline_01":"<p>1990.07.12</p><p>B747-400 飛行機模型の初展示<span>およびコーポレート・アイデンティティシステムの発表</span></p>",
+            "Timeline_02":"<p>1992.11.02</p><p>第1、第2機 B747-400 新機体の<span>シアトルボーイング社での引き渡し式</span></p>",
+            "Timeline_03":"<p>1992.11.24</p><p>第1、第2機 B747-400<span>新機体の台湾での歓迎式典</span></p>",
+            "Timeline_04":"<p>1992.12.12</p><p>太平洋を越えて 台北 - ロサンゼルス運航</p>",
+            "Timeline_05":"<p>1993.05.18</p><p>第3機 B747-400 新機体の台湾での歓迎式典</p>",
+            "Timeline_06":"<p>1993.09.16</p><p>初の B747-400 貨客両用仕様機の<span>シアトルボーイング社での引き渡し式</span></p>",
+            "Timeline_07":"<p>1993.09.23</p><p>第5機 B747-400 新機体の台湾での歓迎式典</p>",
+            "Timeline_08":"<p>1999.07</p><p><span>オーストラリアからコアラの「パトリック」</span><span>と「ハーレー」がエバー航空のボーイング</span><span>747-400 貨客両用機に乗って台湾に到着</span></p>",
+            "Timeline_09":"<p>2000.07.15</p><p>初の B747-400 貨物機を<span>中正国際空港第2ターミナルにて披露</span></p>",
+            "Timeline_10":"<p>2001.11.20</p><p>B747-400 新塗装を披露</p>",
+            "Timeline_11":"<p>2004.10</p><p><span>コアラの「パール」と</span><span>「ジョーイ」が台湾に到着</span></p>",
+            "Timeline_12":"<p>2005.02.18</p><p>ボーイング社との B747-400<span>大型貨物機(LCF)の改装工事契約締結式</span></p>",
+            "Timeline_13":"<p>2007.04.22</p><p>初の B747-400 旅客機から貨物機への<span>改装作業が完了し、5月に運航開始</span></p>",
+            "Timeline_14":"<p>2007.06.15</p><p>第1機 B747 旅客機の<span>客室内装の変更工事完了</span><span>ローレルクラス、エリートクラス、エコノミークラスを設置</span></p>",
+            "Timeline_15":"<p>2007.10.04</p><p><span>B747-400 ファーストクラスの</span><span>カウンターを新装</span></p>",
+            "Timeline_16":"<p>2008.03.14</p><p>B747-400 旅客機を新装</p>",
+            "Timeline_17":"<p>2008.12.22</p><p><span>B747-400 貨客両用機で四川から</span><span>パンダの「団団と円円」を台湾へ運び</span><span>台北市立動物園への見物客が</span><span>行列を作りました</span></p>",
+            "Timeline_18":"<p>2013.09.13</p><p>B747-400 Combi<span>貨客両用機(番号 B-16403)退役</span></p>",
+            "Timeline_19":" <p>2015.01.05</p><p>最後の1機のボーイング 747-400 貨客機<span>(番号 B-16409) は最後のフライトである</span><span>BR868 香港－桃園便の運航後に正式退役し、</span><span>747-400 貨客機はその歴史に幕を閉じました</span></p>",
+            "Timeline_20":" <p>2017.08.24</p><p>BR892 便が香港国際空港から<span>桃園国際空港へ帰還し</span><span>最後の旅客輸送任務を完了しました</span></p>",
+            "History_H1":"ヒストリー",
+            "History_H2":"747-400の生涯",
+            "History_01_1":"エバー航空を率い、主力航空機に",
+            "History_01_2":"エバー航空は、1989年に長栄グループ総裁の張栄発によって設立され、同年10月6日に米国ボーイング社およびマクドネル・ダグラス社と、総額36億米ドルで、747-400旅客機7機、747-400 貨客機10機、747-400貨物機3機の計26機の購入契約を締結しました。早期には、設計、性能または客室の快適さにおいて右に出るもののいないこれらの機体は、エバー航空の草創期における長距離航路の主力チームでした。",
+            "History_02_1":"旅客機の正式就航で、客室スタイルを牽引",
+            "History_02_2":"1991年の正式就航後、1992年11月2日に第1、2機747-400 旅客機がボーイング社にて引き渡されました。内装にはファーストクラス、ビジネスクラス、ビジネスエコノミークラス、エコノミークラスが計画され、革新的なビジネスクラスとエコノミークラスの間の「第4のクラス」（デラックスエコノミークラス）を設置し、他社も次々に追随しました。創業者の張栄発が特別に米国での引き渡しに出向き、新機体は同年11月24日に台湾に到着しました。",
+            "History_03_1":"太平洋を飛び越えた、グローバルネットワークの新局面",
+            "History_03_2":"1992年12月12日に、第1、第2機 747-400 旅客機の台北-ロサンゼルス線の開通による太平洋横断航路の就航で、エバー航空のグローバルフライトネットワークの基礎が作られ、台北－北米直通便が最多の航空会社へと変貌を遂げました。今年の年末まで、エバー航空の台北－北米8大主要都市への直通便は週に88便、台湾の人々の北米への往復を便利にするだけでなく、北米や東南アジアからの、台湾でのトランジットも便利になりました。2003年1月29日エバー航空は初の台湾中国春節チャーター便を開始。航路は台北－マカオ（テクニカルランディング）－上海、B747-400旅客機の運航は、台湾と中国の通航が始まる序曲の開幕でした。",
+            "History_04_1":"数え切れないほどの任務を果たし、747-400が勇退へ",
+            "History_04_2":"747-400 貨客機の特徴的な機体2層構造は、特殊貨物（大型機材、展示品、希少動物など）の輸送を可能にし、貨物所有者に喜ばれ、旅客機の調整がより柔軟になりましたが、技術の進歩は早く、各種電子製品の小型化で貨物需要も減少、長距離航路の新主力旅客機777-300ERの積載量も多いことから、段階的な「世代交代」が行われ、747-400 貨客機は、2015年1月5日に正式に退役となりました。2017年8月21日に香港-台北便の運航を終えた後は、747-400旅客機の全機が引退となり、747-400貨物機も、2019年には全機が退役する予定です。",
+            "History_05_1":"747-400が果たした重要任務：",
+            "History_05_2_1":"総統専用機（貨客両用）",
+            "History_05_2_2":"<li>1995.04 李登輝総統の中東訪問時の専用機</li><li> 2000.08 陳水扁総統の「民主的外交 交友の旅」の専用機</li><li>2001.05 陳水扁総統の「共存共栄 親睦の旅」の専用機</li><li>2009.06 馬英九総統の「旧誼の旅」の専用機</li>",
+            "History_05_2_3":"希少動物専用機（貨客両用）",
+            "History_05_2_4":"<li>1999 「コアラ専用機」としてコアラのハーレーとパトリック台湾輸送専用機</li><li>2008 中国の宝、パンダの団団と円円台湾輸送専用機</li><li>2011北海道の保護動物、丹頂鶴の「BIG」と「貴華」の台湾輸送専用機</li>",
+            "History_05_2_5":"初就航路線（旅客機）",
+            "History_05_2_6_1":"<li>1992.12.12 台北-ロサンゼルス</li><li>1993.06.08 台北-シアトル-ニューヨーク</li><li>1995.12.13 台北-ロサンゼルス-パナマ</li><li>1998.06.11 高雄-ロサンゼルス</li>",
+            "History_05_2_6_2":"<li>1999.06.22 台北-バンクーバー</li><li>2003.01.29 台北-マカオ-上海</li><li>2008.12.15 台北-杭州</li>",
+            "QA_H1":"Q & A",
+            "QA_H2":"エバー航空について、皆様の質問にお答えします。",
+            "QA_01_Q":"エバーグリーングループが運営(購入/リース)していた 747-400 機は何機ですか？",
+            "QA_01_A":"エバーグリーングループでは合計 7 機の 747-400 旅客機(B-16401、B-16402、B-16403、B-16405、 B-16410、B-16411 および B-16412)を運営し、 B-16403 と B-16405 は、それぞれ 1994 年 9 月と 10 月に米国で 貨客両用機に改装され、B-16401 と B-16402 は、 2004 年 4 月に GECAS に売却後リースバック、 2007 年にはイスラエルの改装工場 IAI にて貨物機に改装されました。B-16402 は、2016 年 11 月にリース期間満了を迎え、B-16401 は2017 年 7 月に期間満了を迎える予定です。 ",
+            "QA_02_Q":"エバーグリーングループの 747-400 旅客機の運航拠点はどこでしょうか。また、どの航路が初就航だったのでしょうか。",
+            "QA_02_A_1":"運航拠点 /<div class=\"list\"><span>LAX,SEA,EWR,SFO,YVR</span><span>VIE,LGW,LHR,CDG</span><span>BKK,SIN,PEN,SGN,MNL,KUL,JKT,DPS</span><span>CTS,HKD,HND</span><span>KHH,HKG,MFM</span><span>PVG,PEK,HGH,CAN,SXZ</span></div>",
+            "QA_02_A_2":"初就航 /<div class=\"list\"><span>1992.12.12 TPE-LAX</span><span>1993.06.08 TPE-SEA-EWR</span><span>1995.12.13 TPE-LAX-PTY</span><span>1998.06.11 KHH-LAX</span><span>1999.06.22 TPE-YVR</span><span>2008.12.15 TPE-HGH</span></div>",
+            "QA_03_Q":"エバーグリーングループの 747-400 旅客機で最も遠くへ飛ぶのはどのフライトで、どれくらい遠いのでしょうか。",
+            "QA_03_A":" 最も遠いフライトは TPE (台北)-LAX(ロサンゼルス)-PTY(パナマ)-LAX(ロサンゼルス)-TPE(台北)です。<br>直通で最も遠いフライトは LAX-TPEで、航行距離は約 6，500 マイルです。",
+            "QA_04_Q":"エバーグリーングループの 747-400 旅客機チームの運航期間はどれくらいですか？累計乗客数や累計航行距離は？ 地球何周分ですか？",
+            "QA_04_A":"  1992 年の初の 747-400 旅客機から今まで、エバーグリーングループの 747-400 旅客機チームの運航期間はすでに 25 年にも及びます。(累計乗客数と累計航行距離は統計がございません) ",
+            "QA_05_Q":" エバーグリーングループが 747-400 旅客機を採用した理由は？1機目の 747 はいつチームに導入されたのですか？正式就航はいつからですか？",
+            "QA_05_A":"米国のノースウエスト航空による 1989 年 2 月の初の747-400 旅客機の就航以降、747-400 旅客機はジャンボジェット市場のトップを独占し、その設計、性能または客室の快適さにおいて、どれも右に出る機体はありませんでした。当社では 1992 年 11 月に1機目の 747-400 旅客機を導入し、 1992 年 12 月 12 日には正式に運営開始、初就航は台北-ロサンゼルス航路です。 <br>1992 年導入の ボーイング747-400 ニューモデルには世界初の「第4のクラス」 - デラックスエコノミークラスを創設、エコノミークラス代金に少しプラスするだけでビジネスクラス同様のサービスを受けられます。この革新的なアイデアは、その後多くの同業他社でも導入されました。 <br>2007年には1機目のボーイング747-400 旅客機を改装し、ローレルクラス、エリートクラス、エコノミークラスを設置しました。",
+            "QA_06_Q":"当時の 747-400 旅客機に設置されていたシートクラスは？",
+            "QA_06_A":"スーパーファーストクラス<br>スーパーデラックスクラス<br>エコノミーデラックスクラス<br>エコノミークラス",
+            "QA_07_Q":"改装前後の最大搭乗人数は？",
+            "QA_07_A":"前機体は 4 クラスで 368 シートでしたが、 3 クラスへの改装後は 372 シートとなりました。 ",
+            "QA_08_Q":"改装後のグレードアップにはどのようなサービスがありますか？新しいサービスはありますか？",
+            "QA_08_A":"客室装備がバージョンアップし、スーパーデラックスクラスのリクライニング角度が広く、長旅をより快適に、プライバシー空間をより確実に。全クラスにオンデマンド式のエンターテイメントシステムを搭載し、キッチン設備の増加により、お食事もより楽しみに。トイレ設備も刷新され、より広くなった空間でゆったりとお過ごしいただけます。",
+            "QA_09_Q":"エバーグリーングループの、退役後の 747-400 旅客機への対応について。",
+            "QA_09_A":"747-400 旅客機の退役後は、各パーツに分解し、販売されます。資源が無駄にならないよう、その価値を最大限に活かします。 ",
+            "FB_H1":"特別な思い出",
+            "FB_H2":"25年間の思い出に、感謝をこめて"
         }]
     };
     var pic = [
@@ -248,8 +448,12 @@
         beforeMount: function(){
             var routerTP = this.$route.name;
             this.langTP = this.$route.name;
-            // this.langData = lang[routerTP][0];
-            this.langData = lang['zh'][0];
+            this.langData = lang[routerTP][0];
+            document.title = this.langData.title;
+            
+            $.each(lang, function(key, obj){
+                $.preload(obj[0].index_base);
+            });
         },
         mounted: function(){
             var $this = this;
@@ -293,7 +497,7 @@
             },
             menu: function(){
                 var $this = this;
-                $('.menu .left li, #overlay li, header .logo').on('click', function(e){
+                $('.menu .left li, #overlay li:not(.lang), header .logo').on('click', function(e){
                     $this.preventall(e);
                     var dir = $(this).find('a').attr('role');
                     var padding = 0;
@@ -585,9 +789,10 @@
             },
             changeLang: function(e, tp){
                 this.preventall(e);
-                this.langTP = tp;
-                // this.langData = lang[tp][0];
                 this.$router.replace(tp);
+                this.$nextTick(function(){
+                    if(this.burger) this.burger = false;
+                });
             },
             chkSafari: function(){
                 if(!isMobile.phone){
@@ -619,6 +824,13 @@
                 }else{
                     return "0"
                 }
+            }
+        },
+        watch:{
+            $route: function(){
+                this.langTP = this.$route.name;
+                this.langData = lang[this.langTP][0];
+                document.title = this.langData.title;
             }
         }
     });

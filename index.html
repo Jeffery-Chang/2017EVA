@@ -46,7 +46,7 @@
         </noscript>
         <!-- End Google Tag Manager (noscript) -->
 
-        <span id="indexPage" v-cloak v-if="!ieFG">
+        <span id="indexPage" v-cloak v-if="!ieFG" :class="langTP">
             <div id="splash">
                 <div class="anim">
                     <div id="loader"><img src="asset/svg/plane.svg" alt=""><img class="shade" src="asset/svg/plane_b.svg" alt=""></div>
@@ -99,11 +99,11 @@
                         <li><a class="line" href="#" role="fbBox" @click="gaclick('menu_fanpage')">{{ langData.menu_05 }}</a></li>
                         <li class="lang">
                             <ul>
-                                <li><a :class="{ 'active' : langTP == 'zh' }" href="#" @click="changeLang($event, 'zh')">繁中 </a></li>
-                                <li>/</li>
-                                <li><a :class="(langTP == 'en') ? 'active' : 'line'" href="#" @click="changeLang($event, 'en')">English </a></li>
-                                <li>/</li>
-                                <li><a :class="(langTP == 'jp') ? 'active' : 'line'" href="#" @click="changeLang($event, 'jp')">日本語</a></li>
+                                <li class="lang"><a :class="{ 'active' : langTP == 'zh' }" href="#" @click="changeLang($event, 'zh')">繁中 </a></li>
+                                <li class="lang">/</li>
+                                <li class="lang"><a :class="(langTP == 'en') ? 'active' : 'line'" href="#" @click="changeLang($event, 'en')">English </a></li>
+                                <li class="lang">/</li>
+                                <li class="lang"><a :class="(langTP == 'jp') ? 'active' : 'line'" href="#" @click="changeLang($event, 'jp')">日本語</a></li>
                             </ul>
                         </li>
                         <li><a class="fb_pos" href="#" role="fb"><span class="icon-fb"></span></a></li>
@@ -154,12 +154,12 @@
                     <div class="main">
                         <h1>
                             <div class="ani_pos">
-                                <div class="tt1"><img src="asset/svg/tt1.svg" alt=""></div>
-                                <div class="tt2"><img src="asset/svg/tt2.svg" alt=""></div>
-                                <div class="tt3"><img src="asset/svg/tt3.svg" alt=""></div>
+                                <div class="tt1"><img :src="langData.index_tt1" alt=""></div>
+                                <div class="tt2" v-show="langTP != 'en'"><img src="asset/svg/tt2.svg" alt=""></div>
+                                <div class="tt3"><img :src="langData.index_tt3" alt=""></div>
                                 <div class="tt4"><img src="img/tt4.png" alt=""></div>
                                 <div class="tt5"><img src="asset/svg/tt5.svg" alt=""></div>
-                            </div><img class="base" src="img/tt_base.png" alt="那些年，我們一起搭的747-400">
+                            </div><img class="base" :src="langData.index_base" alt="那些年，我們一起搭的747-400">
                         </h1>
                         <p class="sub" v-html="langData.index_H2_PC"></p>
                         <p class="sub m_sub" v-html="langData.index_H2_M"></p>
@@ -361,7 +361,7 @@
                                     </div>
                                     <div class="item">
                                         <h4>{{ langData.History_03_1 }}</h4>
-                                        <p>{{ langData.History_04_2 }}</p>
+                                        <p>{{ langData.History_03_2 }}</p>
                                     </div>
                                     <div class="item">
                                         <h4>{{ langData.History_04_1 }}</h4>
@@ -369,28 +369,24 @@
                                     </div>
                                     <div class="item">
                                         <h4>{{ langData.History_05_1 }}</h4>
-                                        <p>{{ langData.History_05_2 }}</p>
-                                    </div>
-                                    <div class="item">
-                                        <h4>{{ langData.History_06_1 }}</h4>
-                                        <h5>{{ langData.History_06_2_1 }}</h5>
+                                        <h5>{{ langData.History_05_2_1 }}</h5>
                                         <div class="years">
-                                            <ul v-html="langData.History_06_2_2"></ul>
+                                            <ul v-html="langData.History_05_2_2"></ul>
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <h4>{{ langData.History_06_1 }}</h4>
-                                        <h5>{{ langData.History_06_2_3 }}</h5>
+                                        <h4>{{ langData.History_05_1 }}</h4>
+                                        <h5>{{ langData.History_05_2_3 }}</h5>
                                         <div class="years">
-                                            <ul v-html="langData.History_06_2_4"></ul>
+                                            <ul v-html="langData.History_05_2_4"></ul>
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <h4>{{ langData.History_06_1 }}</h4>
+                                        <h4>{{ langData.History_05_1 }}</h4>
                                         <div class="txtbox">
-                                            <h5>{{ langData.History_06_2_5 }}</h5>
-                                            <div class="years"><ul v-html="langData.History_06_2_6_1"></ul></div>
-                                            <div class="years"><ul v-html="langData.History_06_2_6_2"></ul></div>
+                                            <h5>{{ langData.History_05_2_5 }}</h5>
+                                            <div class="years"><ul v-html="langData.History_05_2_6_1"></ul></div>
+                                            <div class="years"><ul v-html="langData.History_05_2_6_2"></ul></div>
                                         </div>
                                     </div>
                                 </div>
@@ -455,7 +451,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="answer">{{ langData.QA_05_A }}</div></a></li>
+                                    <div class="answer" v-html="langData.QA_05_A"></div></a></li>
                                 <li><a class="qabox">
                                     <div class="question">{{ langData.QA_06_Q }}
                                         <div class="plus_btn">
@@ -497,8 +493,8 @@
                     </div>
                 </div>
                 <div class="fbBox">
-                    <h2>專屬回憶</h2>
-                    <div class="sub">感謝有你，共創 25 年精彩回憶</div>
+                    <h2>{{ langData.FB_H1 }}</h2>
+                    <div class="sub">{{ langData.FB_H2 }}</div>
                     <div class="main">
                         <div class="left"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fevaairwayscorp.tw%2Fposts%2F861293584017826%3A0" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
                         <div class="right"></div>

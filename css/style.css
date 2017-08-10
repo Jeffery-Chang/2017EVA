@@ -2178,7 +2178,7 @@ section:nth-child(17) .pic, section:nth-child(19) .pic {
   }
 }
 .story .slider {
-  width: 200px;
+  width: 175px;
   height: 3px;
   margin: 40px auto 0;
   position: relative;
@@ -2206,6 +2206,11 @@ section:nth-child(17) .pic, section:nth-child(19) .pic {
   width: 260px;
   vertical-align: top;
   text-align: left;
+}
+@media screen and (min-width: 688px) {
+  .txtbox .years:nth-child(3) {
+    width: 207px;
+  }
 }
 
 h3 {
@@ -3182,6 +3187,256 @@ h5 {
 @media screen and (max-width: 768px) {
   .fbBox .right {
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .en .sub {
+    width: 80%;
+    margin: auto;
+  }
+}
+.en .index .sub {
+  width: 60%;
+  margin: 20px auto;
+  max-width: 700px;
+}
+.en .index .m_sub {
+  width: 100%;
+  margin: auto;
+}
+.en .index h1 .tt1 {
+  width: 287px;
+  left: 74px;
+}
+.en .index h1 .tt3 {
+  width: 448px;
+  left: 127px;
+}
+.en .index h1 .tt4 {
+  left: 348px;
+  bottom: 0;
+}
+.en .index h1 .tt5 {
+  bottom: 7px;
+  right: 319px;
+}
+.en .album .subject .right {
+  padding: 0 20px;
+  text-align: left;
+}
+@media screen and (max-width: 1325px) {
+  .en .album .subject .right {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 930px) {
+  .en .album .subject .right {
+    text-align: center;
+  }
+}
+.en .album .subject h2 {
+  width: auto;
+}
+.en .album .subject .sub {
+  width: auto;
+}
+.en .album .subject ul {
+  float: inherit;
+}
+@media screen and (max-width: 413px) {
+  .en .c1 {
+    bottom: -5%;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .en .c2 {
+    right: 10%;
+    top: 10%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .en .c2-3 {
+    left: -83%;
+    top: 38%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .en .c2-3 {
+    top: 25%;
+  }
+}
+@media screen and (max-width: 736px) {
+  .en .c2-3 {
+    width: 200px;
+    left: -8%;
+    top: -7%;
+  }
+}
+@media screen and (max-width: 736px) {
+  .en .c3-2 {
+    bottom: 16%;
+  }
+}
+.en .txtbox .years {
+  width: 287px;
+}
+@media screen and (min-width: 799px) {
+  .en .txtbox .years:nth-child(3) {
+    width: 247px;
+  }
+}
+@media screen and (max-width: 736px) {
+  .en .event p span {
+    display: inline;
+  }
+}
+
+.jp .index h1 .tt1 {
+  width: 218px;
+  left: 78px;
+}
+.jp .index h1 .tt2 {
+  left: 317px;
+}
+.jp .index h1 .tt3 {
+  width: 452px;
+  left: 131px;
+  bottom: -7px;
+}
+.jp .index h1 .tt4 {
+  left: 369px;
+  bottom: 9px;
+}
+.jp .index h1 .tt5 {
+  left: 371px;
+  bottom: 16px;
+}
+.jp .index .m_sub {
+  width: 80%;
+  margin: auto;
+}
+.jp .album .subject .right {
+  padding: 0 20px;
+  text-align: left;
+}
+@media screen and (max-width: 1440px) {
+  .jp .album .subject .right {
+    width: 78%;
+  }
+}
+@media screen and (max-width: 1325px) {
+  .jp .album .subject .right {
+    padding: 0 30px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 930px) {
+  .jp .album .subject .right {
+    text-align: center;
+  }
+}
+.jp .album .subject h2 {
+  width: auto;
+  font-size: 45px;
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 1440px) {
+  .jp .album .subject h2 {
+    font-size: 4rem;
+  }
+}
+.jp .album .subject .sub {
+  width: auto;
+}
+.jp .album .subject ul {
+  float: inherit;
+}
+.jp .txtbox .years {
+  width: 306px;
+}
+@media screen and (min-width: 773px) {
+  .jp .txtbox .years:nth-child(3) {
+    width: 220px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .jp .c3-2 {
+    bottom: 17%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .jp .c3-2 {
+    width: 432px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .jp .c3-2 {
+    left: -36%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .jp .c3-2 {
+    left: -20%;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .jp .c3-2 {
+    left: -347%;
+  }
+}
+@media screen and (max-width: 736px) {
+  .jp .c3-2 {
+    width: 250px;
+    left: -29%;
+    bottom: 17%;
+  }
+}
+@media screen and (max-width: 374px) {
+  .jp .c3-2 {
+    left: -46%;
+    bottom: 15%;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .jp .c1 {
+    bottom: -6%;
+  }
+}
+@media screen and (max-width: 736px) {
+  .jp .c1 {
+    bottom: -4%;
+  }
+}
+@media screen and (max-width: 413px) {
+  .jp .c1 {
+    bottom: -11%;
+    width: 340px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .jp .c1 {
+    width: 270px;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .jp .plane1 {
+    top: -157%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .jp .plane1 {
+    width: 500px;
+    right: -80%;
+    top: -80%;
+  }
+}
+@media screen and (max-width: 736px) {
+  .jp .event p span {
+    display: inline;
   }
 }
 
