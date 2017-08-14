@@ -7,7 +7,7 @@
     fjs.parentNode.insertBefore(js, fjs);
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '355985614832912',
+            appId      : '123347868297339',
             xfbml      : true,
             version    : 'v2.10'
         });
@@ -503,7 +503,7 @@
                     var padding = 0;
                     if(dir){
                         if(dir == 'fb'){
-                            var app_id = '355985614832912';
+                            var app_id = '123347868297339';
                             var fbBack_url = '?fb_back=1';
                             var url = location.origin + location.pathname;
                             var redirect_uri = location.origin + location.pathname;
