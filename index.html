@@ -112,7 +112,7 @@
             </div>
             <!-- lightbox-->
             <transition name="fade">
-                <div class="lightbox" v-show="lightbox"><a class="close" @click="lightbox = false"><span></span><span></span></a>
+                <div class="lightbox" v-show="lightbox"><a class="close" @click="{ lightbox = false, aClose = false }"><span></span><span></span></a>
                     <!-- album-->
                     <div class="main album_main">
                         <p>{{ lightWord }}</p>
@@ -137,7 +137,7 @@
                             </ul>
                         </div>
                     </div>
-                    <a class="closeArea" @click="lightbox = false"></a>
+                    <a class="closeArea" @click="{ lightbox = false, aClose = false }" v-if="aClose"></a>
                 </div>
             </transition>
             <!-- timeline-->
@@ -154,8 +154,8 @@
                     <div class="main">
                         <h1>
                             <div class="ani_pos">
-                                <div class="tt1"><img :src="langData.index_tt1" alt=""></div>
-                                <div class="tt2" v-show="langTP != 'en'"><img src="asset/svg/tt2.svg" alt=""></div>
+                                <div class="tt1" v-show="langTP != 'jp'"><img :src="langData.index_tt1" alt=""></div>
+                                <div class="tt2" v-show="langTP == 'zh'"><img src="asset/svg/tt2.svg" alt=""></div>
                                 <div class="tt3"><img :src="langData.index_tt3" alt=""></div>
                                 <div class="tt4"><img src="img/tt4.png" alt=""></div>
                                 <div class="tt5"><img src="asset/svg/tt5.svg" alt=""></div>
@@ -228,7 +228,11 @@
                                     <li><a href="#" @click="openBox($event, 11)"><span v-html="langData.photo_12"></span><img src="img/album/12_01_s.jpg" alt="長榮航空747-400機內環境"></a></li>
                                 </ul>
                             </div>
-                            <div class="video" v-show="!albumFG"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/bHv0pEzy7pM？rel=0&amp;controls=0&amp;showinfo=0？ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div></div>
+                            <div class="video" v-show="!albumFG">
+                                <div style="position:relative;height:0;padding-bottom:56.25%">
+                                    <iframe v-if="!albumFG" src="https://www.youtube.com/embed/FTPIBtY4aSg?list=PL_PR6YoCajFla_d_xKvTHe_2KeOdBaTeF&rel=0&amp;controls=1&amp;showinfo=0?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="c1"><img src="img/c1.png" alt=""></div>

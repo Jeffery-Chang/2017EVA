@@ -3292,29 +3292,27 @@ h5 {
   }
 }
 
-.jp .index h1 .tt1 {
-  width: 218px;
-  left: 78px;
-}
-.jp .index h1 .tt2 {
-  left: 317px;
-}
 .jp .index h1 .tt3 {
-  width: 452px;
-  left: 131px;
-  bottom: -7px;
+  width: 540px;
+  left: 78px;
+  bottom: 0;
 }
 .jp .index h1 .tt4 {
-  left: 369px;
-  bottom: 9px;
+  left: 400px;
+  bottom: 0;
 }
 .jp .index h1 .tt5 {
-  left: 371px;
-  bottom: 16px;
+  left: 408px;
+  bottom: 8px;
 }
 .jp .index .m_sub {
   width: 80%;
   margin: auto;
+}
+@media screen and (max-width: 736px) and (min-width: 414px) {
+  .jp .index .main {
+    padding-top: 130px;
+  }
 }
 .jp .album .subject .right {
   padding: 0 20px;
