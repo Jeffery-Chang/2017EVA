@@ -3089,12 +3089,17 @@ h5 {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   margin-top: 50px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1488px) {
   .fbBox .main {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 1236px) {
+  .fbBox .main {
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3114,6 +3119,9 @@ h5 {
     margin-top: 30px;
   }
 }
+.fbBox iframe {
+  height: 600px;
+}
 .fbBox .left {
   width: 49%;
   margin-right: 2%;
@@ -3123,62 +3131,49 @@ h5 {
     margin-right: 0;
   }
 }
-.fbBox .left iframe {
-  height: 500px;
-}
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1236px) {
   .fbBox .left iframe {
-    height: 460px;
-  }
-}
-@media screen and (max-width: 1123px) {
-  .fbBox .left iframe {
-    height: 420px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .fbBox .left iframe {
-    height: 400px;
+    height: 560px;
   }
 }
 @media screen and (max-width: 768px) {
   .fbBox .left iframe {
-    height: 500px;
+    height: 598px;
   }
 }
 @media screen and (max-width: 645px) {
   .fbBox .left iframe {
-    height: 470px;
+    height: 577px;
   }
 }
 @media screen and (max-width: 595px) {
   .fbBox .left iframe {
-    height: 440px;
+    height: 544px;
   }
 }
 @media screen and (max-width: 523px) {
   .fbBox .left iframe {
-    height: 400px;
+    height: 516px;
   }
 }
 @media screen and (max-width: 374px) {
   .fbBox .left iframe {
-    height: 380px;
+    height: 509px;
   }
 }
 @media screen and (max-device-width: 736px) {
   .fbBox .left iframe {
-    height: 370px;
+    height: 470px;
   }
 }
 @media screen and (max-device-width: 413px) {
   .fbBox .left iframe {
-    height: 350px;
+    height: 508px;
   }
 }
 @media screen and (max-device-width: 374px) {
   .fbBox .left iframe {
-    height: 340px;
+    height: 494px;
   }
 }
 .fbBox .right {
@@ -3187,6 +3182,31 @@ h5 {
 @media screen and (max-width: 768px) {
   .fbBox .right {
     margin-top: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fbBox .right iframe {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 645px) {
+  .fbBox .right iframe {
+    height: 470px;
+  }
+}
+@media screen and (max-width: 595px) {
+  .fbBox .right iframe {
+    height: 415px;
+  }
+}
+@media screen and (max-width: 523px) {
+  .fbBox .right iframe {
+    height: 399px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .fbBox .right iframe {
+    height: 366px;
   }
 }
 

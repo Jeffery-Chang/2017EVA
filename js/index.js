@@ -12,9 +12,9 @@
             version    : 'v2.10'
         });
         // https://747.evaair.com 正式站網址
-        var fbUrl = 'https://technic.webgene.com.tw/project/2017EVA/';
+        /*var fbUrl = 'https://technic.webgene.com.tw/project/2017EVA/';
         $('.fbBox .right').append('<fb:comments href="'+fbUrl+'" num_posts="5" width="100%"></fb:comments>');
-        FB.XFBML.parse($('.fbBox .right')[0]);
+        FB.XFBML.parse($('.fbBox .right')[0]);*/
     };
 }(document, 'script', 'facebook-jssdk'));
 (function(a){a.preload=function(){var c=[],b=arguments.length;for(;b--;){c.push(a("<img />").attr("src",arguments[b]));}};})(jQuery);
@@ -471,6 +471,8 @@
             this.scroll();
             this.resize();
             this.slideBG();
+            
+            if(isMobile.phone) $('.fbBox .right iframe').height(200);
 
             $(window).on('scroll', function(){
                 $this.scroll();
