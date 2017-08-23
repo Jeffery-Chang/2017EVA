@@ -9,6 +9,13 @@ body #indexPage header.mobile{
     border-bottom: 0px solid rgba(255, 255, 255, 0);
 }
 
+.myWord{
+    position: absolute;
+    bottom: 100%;
+    opacity: 0;
+    z-index: -9999;
+}
+
 #splash{
     z-index: 100;
 }
